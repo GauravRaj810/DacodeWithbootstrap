@@ -1,0 +1,70 @@
+.btn{
+    border-radius: 9999px;
+}
+.btn-primary{
+    color: $clr-white;
+    border: none;
+    background: $secondry-clr;
+    padding: 11px 27px;
+    @media(max-width: 1200px){
+        padding: 9px 16px;
+    }
+
+}
+.request-btn{
+    @media(max-width: 1200px){
+        display: none;
+    }
+}
+
+.btn-outline-primary {
+    background: #ffffff;
+    color: $primary-clr;
+    padding: 10px 25px;
+    border: 1px solid $primary-clr;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center bottom; // Keeps scaling stable
+    font-size: 16px; // Default size
+
+    @media (max-width: 1000px) {
+        padding: 8px 20px;
+        font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 7px 18px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 576px) {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    &:hover {
+        color: $clr-white;
+        background: $primary-clr;
+        border: 1px solid transparent;
+        transform: scale(1.05) translateY(3px); // Slight scale & downward move
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15); // Soft shadow effect
+
+        @media (max-width: 768px) {
+            transform: scale(1.03) translateY(2px); // Reduce hover effect on smaller screens
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 576px) {
+            transform: scale(1.02) translateY(1px);
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+        }
+    }
+}
+
+
+.btn-wrapper{
+    z-index: 1;
+    @media(max-width:768px){
+        display: flex;
+        justify-content: center;
+    }
+}

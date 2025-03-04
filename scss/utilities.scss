@@ -1,0 +1,43 @@
+.underline {
+  height: 4px;
+  width: 120px;
+  background: $secondry-clr;
+  @media(max-width:768px){
+    display: none;
+  }
+}
+
+.span-text {
+  color: $primary-clr;
+}
+
+.ring-img {
+    z-index: -1;
+    position: fixed;
+    bottom: -280px; // Adjust this to move it up/down
+    left: 10px;    // Adjust this to move it left/right
+
+
+    img {
+        width: 80%; // Make sure it scales properly
+        height: auto; // Maintain aspect ratio
+    }
+
+    @media (max-width: 992px) {
+        bottom: -10px;
+        left: 30px;
+        transform: scale(1.2); // Slightly smaller on medium screens
+    }
+
+    @media (max-width: 768px) {
+        bottom: 0px;
+        left: 20px;
+        transform: scale(1); // Normal size on small screens
+    }
+
+    @media (max-width: 576px) {
+        bottom: 10px;
+        left: 10px;
+        transform: scale(0.8); // Reduce size for very small screens
+    }
+}

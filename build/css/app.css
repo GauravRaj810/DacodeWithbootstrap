@@ -1,0 +1,366 @@
+@charset "UTF-8";
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.hero-section {
+  padding: 220px 0;
+  position: relative;
+  background: url(/images/hero.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+@media (max-width: 1200px) {
+  .hero-section {
+    padding: 180px 0;
+    background-size: 60%;
+  }
+}
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 150px 0;
+    background-size: 55%;
+    background-position: center right;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 120px 0;
+    background-position: top center;
+  }
+}
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 100px 20px;
+    background-size: 80%;
+    background-position: top center;
+  }
+}
+
+.hero-content {
+  max-width: 650px;
+  padding: 0 20px;
+}
+@media (max-width: 992px) {
+  .hero-content {
+    max-width: 550px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 150px;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.hero-section-title {
+  margin-bottom: 29px;
+  font-weight: 900;
+  font-size: 58px;
+  line-height: 65.25px;
+  letter-spacing: -1.5%;
+}
+@media (max-width: 992px) {
+  .hero-section-title {
+    font-size: 48px;
+    line-height: 55px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+@media (max-width: 576px) {
+  .hero-section-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.hero-section-desc {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 31.44px;
+  text-align: justify;
+}
+@media (max-width: 992px) {
+  .hero-section-desc {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section-desc {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .hero-section-desc {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.btn {
+  border-radius: 9999px;
+}
+
+.btn-primary {
+  color: #FFFFFF;
+  border: none;
+  background: #7BC0E3;
+  padding: 11px 27px;
+}
+@media (max-width: 1200px) {
+  .btn-primary {
+    padding: 9px 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .request-btn {
+    display: none;
+  }
+}
+
+.btn-outline-primary {
+  background: #ffffff;
+  color: #60E1CB;
+  padding: 10px 25px;
+  border: 1px solid #60E1CB;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center bottom;
+  font-size: 16px;
+}
+@media (max-width: 1000px) {
+  .btn-outline-primary {
+    padding: 8px 20px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .btn-outline-primary {
+    padding: 7px 18px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .btn-outline-primary {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+.btn-outline-primary:hover {
+  color: #FFFFFF;
+  background: #60E1CB;
+  border: 1px solid transparent;
+  transform: scale(1.05) translateY(3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+  .btn-outline-primary:hover {
+    transform: scale(1.03) translateY(2px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+@media (max-width: 576px) {
+  .btn-outline-primary:hover {
+    transform: scale(1.02) translateY(1px);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.btn-wrapper {
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.underline {
+  height: 4px;
+  width: 120px;
+  background: #7BC0E3;
+}
+@media (max-width: 768px) {
+  .underline {
+    display: none;
+  }
+}
+
+.span-text {
+  color: #60E1CB;
+}
+
+.ring-img {
+  z-index: -1;
+  position: fixed;
+  bottom: -280px;
+  left: 10px;
+}
+.ring-img img {
+  width: 80%;
+  height: auto;
+}
+@media (max-width: 992px) {
+  .ring-img {
+    bottom: -10px;
+    left: 30px;
+    transform: scale(1.2);
+  }
+}
+@media (max-width: 768px) {
+  .ring-img {
+    bottom: 0px;
+    left: 20px;
+    transform: scale(1);
+  }
+}
+@media (max-width: 576px) {
+  .ring-img {
+    bottom: 10px;
+    left: 10px;
+    transform: scale(0.8);
+  }
+}
+
+.navbar {
+  background: #d9fff4;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    background: #FFFFFF;
+  }
+}
+.navbar-collapse {
+  flex-grow: 0;
+  gap: 10px;
+}
+@media (max-width: 992px) {
+  .navbar-collapse {
+    margin-left: 0 !important;
+  }
+}
+
+.navbar-nav {
+  gap: 40px;
+}
+@media (max-width: 1400px) {
+  .navbar-nav {
+    gap: 28px;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar-nav {
+    gap: 28px;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-nav {
+    gap: 0;
+  }
+}
+
+.nav-link {
+  color: #60E1CB;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 992px) {
+  .nav-link {
+    color: #003b4d;
+  }
+}
+.nav-link:hover {
+  color: #000000;
+  opacity: 1;
+}
+@media (max-width: 992px) {
+  .nav-link:hover {
+    color: #a7b4d1;
+  }
+}
+
+.services-section {
+  background: #e9fbf8;
+  padding: 60px 0;
+}
+.services-section .row {
+  justify-content: center;
+}
+.services-section .section-title {
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+}
+.services-section .section-subtitle {
+  max-width: 750px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.services-section .service-box {
+  border-top: 9px solid #60E1CB;
+  background: #fdfdff;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 360px;
+  padding: 80px 40px 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.services-section .service-box:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.services-section .service-box .service-icon img {
+  max-width: 60px;
+  margin-bottom: 35px;
+}
+.services-section .service-box .service-title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+  line-height: 25.3px;
+}
+.services-section .service-box .service-description {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20.83px;
+  margin-bottom: 25px;
+}
+.services-section .service-box .read-more {
+  color: #007bff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+}
+.services-section .service-box .read-more:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Ensuring cards are centered inside the grid */
+.col {
+  flex: unset; /* Let Bootstrap handle the column width */
+  width: auto; /* Prevent forced expansion */
+  padding: 0 15px; /* Ensure equal spacing */
+}
+
+/*# sourceMappingURL=app.css.map */

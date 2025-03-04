@@ -1,0 +1,80 @@
+.services-section {
+  background: #e9fbf8;
+  padding: 60px 0;
+
+  .row{
+    justify-content: center;
+  }
+
+  .section-title {
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    max-width: 750px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .service-box {
+    border-top: 9px solid $primary-clr;
+    background: #fdfdff;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 360px;
+    padding: 80px 40px 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
+    .service-icon {
+      img {
+        max-width: 60px;
+        margin-bottom: 35px;
+      }
+    }
+
+    .service-title {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 15px;
+      line-height: 25.3px;
+    }
+
+    .service-description {
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20.83px;
+      margin-bottom: 25px;
+    }
+
+    .read-more {
+      color: #007bff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: auto;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* ✅ Ensuring cards are centered inside the grid */
+.col {
+    flex: unset; /* Let Bootstrap handle the column width */
+    width: auto; /* Prevent forced expansion */
+    padding: 0 15px; /* Ensure equal spacing */
+}
+

@@ -1,0 +1,48 @@
+// *********** Navbar **********
+
+.navbar {
+  background: #d9fff4; // Default for small screens (mobile-first)
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    background: $clr-white; // Change background for larger screens
+  }
+}
+.navbar-collapse {
+  flex-grow: 0;
+  gap: 10px;
+  @media (max-width: 992px) {
+    margin-left: 0 !important;
+  }
+}
+.navbar-nav {
+  gap: 40px;
+
+  @media (max-width: 1400px) {
+    gap: 28px;
+  }
+  @media (max-width: 1200px) {
+    gap: 28px;
+  }
+  @media (max-width: 992px) {
+    gap: 0;
+  }
+}
+.nav-link {
+  color: $primary-clr;
+  font-size: 18px;
+  font-weight: bold; // Set it bold from the beginning to prevent shift
+  opacity: 0.8; // Reduce opacity so it looks "lighter"
+  transition: all 0.3s ease-in-out;
+  @media (max-width: 992px) {
+    color: #003b4d;
+  }
+  &:hover {
+    color: $clr-black;
+    opacity: 1; // Full opacity on hover instead of changing font-weight
+    @media (max-width: 992px) {
+      color: $clr-light-blue;
+    }
+  }
+}
