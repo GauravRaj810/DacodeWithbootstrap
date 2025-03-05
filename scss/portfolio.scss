@@ -1,0 +1,51 @@
+// portfolio section -
+.portfolio-section {
+    margin: 100px 0;
+    .portfolio-subtitle {
+    color: $secondry-clr;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30.36px;
+    text-align: center;
+  }
+  .portfolio-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60.72px;
+    text-align: center;
+    margin-bottom: 60px ;
+  }
+}
+
+
+  .tab-header {
+    justify-content: center;
+    gap: 70px;
+    display: flex;
+    background: transparent;
+
+  }
+  
+  .tab-item {
+    font-weight: bold;
+    font-size: 20px;
+    color: $secondry-clr;
+    border-radius: 9999px;
+    border : 2px solid transparent;
+    padding: 18px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .tab-item:hover {
+   background: transparent;
+    border: 2px solid $secondry-clr;
+  }
+  
+  .tab-content {
+    padding: 15px;
+  }
+  
+  .tab-pane {
+    display: none;
+  }

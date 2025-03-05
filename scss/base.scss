@@ -3,7 +3,6 @@
 body {
     font-family: "DM Sans", sans-serif;
   }
-  
   .hero-section {
     padding: 220px 0;
     position: relative;
@@ -16,7 +15,7 @@ body {
       padding: 180px 0;
       background-size: 60%; // Reduce background image size
     }
-  
+
     @media (max-width: 992px) {
       padding: 150px 0;
       background-size: 55%;
@@ -24,32 +23,45 @@ body {
     }
   
     @media (max-width: 768px) {
-      padding: 120px 0;
-      background-position: top center;
+      padding: 80px 0 100px 0;
+      background-size: 55%; /* Adjust size of the background image */
+      background-position: 120px 300px; /* Ensure the image is aligned to the bottom */
     }
   
     @media (max-width: 576px) {
-      padding: 100px 20px;
-      background-size: 80%;
-      background-position: top center;
+      padding: 60px 20px;
+      background-size: 60%;
+      background-position: 90px 250px; /* Ensure the image is aligned to the bottom */
+    }
+    @media (max-width: 480px) {
+      padding: 60px 20px;
+      background-size: 60%;
+      background-position: 80px 290px; /* Ensure the image is aligned to the bottom */
+    }
+    @media (max-width: 380px) {
+      padding: 60px 20px;
+      background-size: 60%;
+      background-position: 60px 330px; /* Ensure the image is aligned to the bottom */
     }
   }
   
   .hero-content {
     max-width: 650px;
-    padding: 0 20px; // Add padding for better spacing on small screens
-  
     @media (max-width: 992px) {
       max-width: 550px;
     }
   
     @media (max-width: 768px) {
-      padding-top: 150px;
       max-width: 100%;
       text-align: center; // Center content for small screens
+      padding: 0 20px 180px 20px;
+    }
+    @media (max-width: 576px) {
+      max-width: 100%;
+      text-align: center; // Center content for small screens
+      padding: 0 30px 140px 30px;
     }
   }
-  
   .hero-section-title {
     margin-bottom: 29px;
     font-weight: 900;
@@ -61,15 +73,15 @@ body {
       font-size: 48px;
       line-height: 55px;
     }
-  
     @media (max-width: 768px) {
-      font-size: 40px;
-      line-height: 48px;
-    }
-  
+      font-size: 35px;
+      line-height: 45px;
+      margin-bottom: 5px;
+    } 
     @media (max-width: 576px) {
-      font-size: 32px;
-      line-height: 40px;
+      font-size: 30px;
+      line-height: 35px;
+      margin-bottom: 5px;
     }
   }
   
@@ -85,14 +97,16 @@ body {
     }
   
     @media (max-width: 768px) {
-      font-size: 16px;
-      line-height: 26px;
+      font-size: 15px;
+      line-height: 24px;
       text-align: center; // Center text on small screens
+      margin-bottom: 10px;
     }
   
     @media (max-width: 576px) {
       font-size: 14px;
-      line-height: 24px;
+      line-height: 22px;
+      margin-bottom: 12px;
     }
   }
   

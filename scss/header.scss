@@ -39,6 +39,7 @@
     color: #003b4d;
   }
   &:hover {
+
     color: $clr-black;
     opacity: 1; // Full opacity on hover instead of changing font-weight
     @media (max-width: 992px) {
