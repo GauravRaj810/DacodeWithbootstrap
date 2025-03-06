@@ -25,7 +25,7 @@
 
 .btn-primary{
     background: $secondry-clr;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
 }
 
 
@@ -38,7 +38,7 @@
 .btn-outline-primary {
   color: $primary-clr;
   padding: 10px 25px;
-  border: 1px solid $primary-clr;
+  border: 1px solid $primary-clr !important;
   transition: all 0.3s ease-in-out;
   transform-origin: center bottom; // Keeps scaling stable
   font-size: 16px; // Default size
@@ -85,3 +85,30 @@
     gap: 8px !important;
   }
 }
+
+// see all btn 
+.btn-danger{
+  padding: 13px 40px;
+  margin: 0 auto;
+  z-index: 999px;
+  background: $clr-black;
+  color: $clr-white;
+}
+.btn-danger:hover{
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+  color: $clr-black;
+  background: $secondry-clr;
+}
+
+// see button - 
+
+.see-btn{
+  transform: translateY(-20px);
+  max-width: 150px;
+  margin:  auto;
+  @media(max-width:576px){
+    transform: translate(20px, -20px);
+  }
+}
+
+

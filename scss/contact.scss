@@ -1,0 +1,21 @@
+.contact-section {
+    margin: 0 0 100px 0;
+    padding: 200px 10px;
+    background-color: $primary-clr; /* Ensures background color is applied */
+    background-image: url(/images/Vector\ 1\ \(1\).png), url(/images/Vector\ 2.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top , right top ; /* Adjust as needed */
+    background-size: contain contain;
+    @media(max-width: 1200px){
+        padding: 180px 10px;
+    }
+    @media(max-width: 992px){
+        padding: 160px 10px;
+    }
+    @media(max-width: 768px){
+        padding: 140px 10px;
+    }
+    @media(max-width: 576px){
+        padding: 80px 10px;
+    }
+}

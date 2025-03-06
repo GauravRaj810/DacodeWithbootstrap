@@ -161,7 +161,7 @@ body {
 
 .btn-primary {
   background: #7BC0E3;
-  border: 1px solid transparent;
+  border: 1px solid transparent !important;
 }
 
 @media (max-width: 1200px) {
@@ -173,7 +173,7 @@ body {
 .btn-outline-primary {
   color: #60E1CB;
   padding: 10px 25px;
-  border: 1px solid #60E1CB;
+  border: 1px solid #60E1CB !important;
   transition: all 0.3s ease-in-out;
   transform-origin: center bottom;
   font-size: 16px;
@@ -231,6 +231,31 @@ body {
   }
 }
 
+.btn-danger {
+  padding: 13px 40px;
+  margin: 0 auto;
+  z-index: 999px;
+  background: #000000;
+  color: #FFFFFF;
+}
+
+.btn-danger:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+  color: #000000;
+  background: #7BC0E3;
+}
+
+.see-btn {
+  transform: translateY(-20px);
+  max-width: 150px;
+  margin: auto;
+}
+@media (max-width: 576px) {
+  .see-btn {
+    transform: translate(20px, -20px);
+  }
+}
+
 .underline {
   height: 4px;
   width: 120px;
@@ -249,6 +274,18 @@ body {
 
 .span-text {
   color: #60E1CB;
+}
+
+/* Add this to your existing SCSS */
+.slide-content.mobile-view {
+  display: block; /* Override the flex layout */
+}
+.slide-content.mobile-view .img-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.slide-content.mobile-view .img-wrapper img {
+  max-width: 100%;
 }
 
 .navbar {
@@ -315,6 +352,16 @@ body {
   background-color: #e9fbf8;
   padding: 120px 0;
 }
+@media (max-width: 992px) {
+  .services-section {
+    padding: 90px 0;
+  }
+}
+@media (max-width: 576px) {
+  .services-section {
+    padding: 60px 0;
+  }
+}
 
 .services-section .section-title {
   font-weight: 700;
@@ -333,7 +380,12 @@ body {
   border-radius: 10px;
   border-top: 8px solid #60E1CB !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 70px 47px 30px 25px;
+  padding: 65px 47px 30px 25px;
+}
+@media (max-width: 576px) {
+  .service-card {
+    padding: 50px 35px 25px 20px;
+  }
 }
 
 .service-card:hover {
@@ -422,15 +474,16 @@ body {
   position: relative;
 }
 
+/* -------------------- Portfolio Section -------------------- */
 .portfolio-section {
-  margin: 100px 0;
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
 }
-.portfolio-section .portfolio-subtitle {
-  color: #7BC0E3;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 30.36px;
-  text-align: center;
+@media (max-width: 576px) {
+  .portfolio-section {
+    padding: 50px 0;
+  }
 }
 .portfolio-section .portfolio-title {
   font-weight: 700;
@@ -439,36 +492,405 @@ body {
   text-align: center;
   margin-bottom: 60px;
 }
-
-.tab-header {
-  justify-content: center;
-  gap: 70px;
-  display: flex;
-  background: transparent;
+@media (max-width: 1200px) {
+  .portfolio-section .portfolio-title {
+    font-size: 40px;
+    line-height: 35px;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-section .portfolio-title {
+    font-size: 40px;
+    line-height: 35px;
+    margin-bottom: 40px;
+  }
+}
+.portfolio-section .portfolio-subtitle {
+  color: #7BC0E3;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30.36px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .portfolio-section .portfolio-subtitle {
+    font-size: 20px;
+  }
 }
 
-.tab-item {
-  font-weight: bold;
+/* Background effect (halfway) */
+.portfolio-section::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: #60E1CB;
+  z-index: -1;
+}
+
+/* -------------------- Swiper Styles -------------------- */
+.swiper {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+/* Slide Content Layout */
+.slide-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+@media (max-width: 992px) {
+  .slide-content {
+    gap: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .slide-content {
+    flex-direction: row;
+  }
+}
+
+/* Image Wrapper */
+.img-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+}
+@media (max-width: 768px) {
+  .img-wrapper {
+    width: 100%;
+  }
+}
+
+/* Image Styles */
+.img-wrapper img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .img-wrapper img {
+    max-width: 100%;
+  }
+}
+
+/* Image Text */
+.img-wrapper-text {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .img-wrapper-text {
+    font-size: 14px;
+  }
+}
+
+/* -------------------- Swiper Navigation Buttons -------------------- */
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: #FFFFFF;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1200px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 40%;
+  }
+}
+@media (max-width: 998px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 30%;
+  }
+}
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 50%;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Arrow Icon Styling */
+.swiper-button-next::after,
+.swiper-button-prev::after {
   font-size: 20px;
   color: #7BC0E3;
-  border-radius: 9999px;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 16px;
+  }
+}
+
+/* -------------------- Tabs Styling -------------------- */
+.nav-tabs {
+  justify-content: center;
+  border-bottom: none;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .nav-tabs {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .nav-tabs {
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-bottom: 25px;
+  }
+}
+
+/* Default Tab Styling */
+.nav-tabs .nav-link {
+  color: #7BC0E3;
   border: 2px solid transparent;
-  padding: 18px 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .nav-tabs .nav-link {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
 }
 
-.tab-item:hover {
-  background: transparent;
+/* Hover Effect */
+.nav-tabs .nav-link:hover {
   border: 2px solid #7BC0E3;
+  background: rgba(123, 192, 227, 0.1);
 }
 
-.tab-content {
-  padding: 15px;
+/* Active Tab Styling */
+.nav-tabs .nav-link.active {
+  background: white;
+  border: 2px solid #7BC0E3;
+  color: #7BC0E3;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
-.tab-pane {
-  display: none;
+.contact-section {
+  margin: 0 0 100px 0;
+  padding: 200px 10px;
+  background-color: #60E1CB; /* Ensures background color is applied */
+  background-image: url(/images/Vector\ 1\ \(1\).png), url(/images/Vector\ 2.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right top; /* Adjust as needed */
+  background-size: contain contain;
+}
+@media (max-width: 1200px) {
+  .contact-section {
+    padding: 180px 10px;
+  }
+}
+@media (max-width: 992px) {
+  .contact-section {
+    padding: 160px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 140px 10px;
+  }
+}
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 80px 10px;
+  }
+}
+
+.list-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.list-section {
+  background: url(/images/Working\ Remotely.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: right 300px;
+  margin-top: 200px;
+  padding-bottom: 200px;
+  padding-left: 120px;
+}
+@media (max-width: 1200px) {
+  .list-section {
+    margin-top: 180px;
+    padding-bottom: 180px;
+    padding-left: 110px;
+    background-size: 45%;
+    background-position: right 350px;
+  }
+}
+@media (max-width: 992px) {
+  .list-section {
+    margin-top: 150px;
+    padding-bottom: 200px;
+    padding-left: 0;
+    background-size: 50%;
+    background-position: right 790px;
+  }
+}
+@media (max-width: 768px) {
+  .list-section {
+    margin-top: 100px;
+    padding-bottom: 150px;
+    padding-left: 0;
+    background-size: 50%;
+    background-position: right 920px;
+  }
+}
+@media (max-width: 576px) {
+  .list-section {
+    padding-bottom: 180px;
+    margin-top: 80px;
+    padding-left: 0;
+    background-size: 45%;
+    background-position: right 830px;
+  }
+}
+@media (max-width: 460px) {
+  .list-section {
+    margin-top: 70px;
+    padding-left: 0;
+    background-size: 40%;
+    background-position: right 950px;
+  }
+}
+@media (max-width: 430px) {
+  .list-section {
+    background-size: 50%;
+    background-position: center 1050px;
+  }
+}
+@media (max-width: 390px) {
+  .list-section {
+    background-size: 50%;
+    background-position: center 1250px;
+  }
+}
+@media (max-width: 380px) {
+  .list-section {
+    background-size: 50%;
+    background-position: center bottom;
+  }
+}
+
+.main-head-text {
+  color: #60E1CB;
+}
+
+.lead {
+  font-weight: 500;
+}
+
+.process-step {
+  position: relative;
+  padding-left: 90px;
+  margin-bottom: 3rem;
+}
+@media (max-width: 1200px) {
+  .process-step {
+    padding-left: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .process-desc {
+    margin-bottom: -30px;
+    font-size: 14px;
+  }
+}
+
+/* Step number styling */
+.step-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #60E1CB;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Ensure step number appears above the dashed line */
+}
+
+/* Dashed line connecting steps */
+.process-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 27px; /* Centers the line with the step number (half of 55px minus half of border width) */
+  top: 55px; /* Start from bottom of the number circle */
+  width: 2px;
+  height: calc(100% + 1rem); /* Extend to the next step */
+  border-left: 1px dashed #60E1CB; /* Use your primary color variable */
+  z-index: 1;
+}
+
+.illustration-container {
+  position: relative;
+  min-height: 400px;
+}
+
+.illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .illustration-container {
+    margin-top: 2rem;
+  }
+}
+.testimonal-section {
+  margin: 150px 0;
+}
+.testimonal-section .testimonal-subtitle {
+  color: #7BC0E3;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+}
+.testimonal-section .testimonal-title {
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=app.css.map */

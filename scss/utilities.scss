@@ -13,3 +13,17 @@
 .span-text {
   color: $primary-clr;
 }
+/* Add this to your existing SCSS */
+.slide-content.mobile-view {
+  display: block; /* Override the flex layout */
+  
+  .img-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
