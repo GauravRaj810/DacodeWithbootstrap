@@ -1,102 +1,74 @@
 
-// Initialize Swiper
-const swiper = new Swiper('.swiper', {
-  loop: false,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  // Responsive breakpoints
-  breakpoints: {
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 1, // Show only the main slide
+// fixing header 
+document.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('mainNav');
+    
+    if (window.scrollY > 50) { // Change color after scrolling 50px
+      navbar.style.background = '#ffffff'; // White background when scrolled
+      navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)'; // Optional: add shadow for better UI
+    } else {
+      // Reset to original background based on screen size
+      if (window.innerWidth < 992) {
+        navbar.style.background = '#d9fff4'; // Mobile background
+      } else {
+        navbar.style.background = '#ffffff'; // Desktop background
+      }
+      navbar.style.boxShadow = 'none';
     }
-  },
-  on: {
-    init: function () {
-      adjustSliderForScreenSize();
+  });
+});
+
+
+
+// var swiper = new Swiper(".mySwiper", {
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
+
+
+
+// Initialize Swiper for active tab on page load
+var activeTabId = document.querySelector('.tab-pane.active').id;
+initSwiper('#' + activeTabId + ' .swiper-container');
+
+// Initialize Swiper when tab is clicked
+document.querySelectorAll('[data-bs-toggle="pill"]').forEach(function(tabEl) {
+  tabEl.addEventListener('shown.bs.tab', function (event) {
+    var targetTabId = event.target.getAttribute('data-bs-target');
+    initSwiper(targetTabId + ' .swiper-container');
+  });
+});
+
+// Function to initialize Swiper
+function initSwiper(selector) {
+  var swiper = new Swiper(selector, {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: selector + ' .swiper-button-next',
+      prevEl: selector + ' .swiper-button-prev'
     },
-    resize: function () {
-      adjustSliderForScreenSize();
+    loop: true,
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    breakpoints: {
+      // when window width is <= 768px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 10
+      },
+      // when window width is <= 576px
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      }
     }
-  }
-});
-
-// Function to handle responsive behavior
-function adjustSliderForScreenSize() {
-  const isMobile = window.innerWidth < 768;
-  const slides = document.querySelectorAll('.swiper-slide');
-  
-  if (isMobile) {
-    // For mobile: Extract each image wrapper as its own slide
-    reorganizeForMobile();
-  } else {
-    // For desktop: Return to original structure if needed
-    reorganizeForDesktop();
-  }
+  });
 }
 
-// Restructure slider for mobile view
-function reorganizeForMobile() {
-  const swiperWrapper = document.querySelector('.swiper-wrapper');
-  const originalSlides = document.querySelectorAll('.swiper-slide');
-  const allImageWrappers = [];
-  
-  // Store the original structure if not already stored
-  if (!window.originalSwiperStructure) {
-    window.originalSwiperStructure = swiperWrapper.innerHTML;
-  }
-  
-  // First, collect all image wrappers from all slides
-  originalSlides.forEach(slide => {
-    const imageWrappers = slide.querySelectorAll('.img-wrapper');
-    imageWrappers.forEach(wrapper => {
-      allImageWrappers.push(wrapper.cloneNode(true));
-    });
-  });
-  
-  // Then clear and rebuild the swiper
-  swiperWrapper.innerHTML = '';
-  // Create new slide for each image wrapper
-  allImageWrappers.forEach(wrapper => {
-    const newSlide = document.createElement('div');
-    newSlide.className = 'swiper-slide';
-    
-    const newSlideContent = document.createElement('div');
-    newSlideContent.className = 'slide-content mobile-view';
-    
-    newSlideContent.appendChild(wrapper);
-    newSlide.appendChild(newSlideContent);
-    swiperWrapper.appendChild(newSlide);
-  });
-  
-  // Refresh swiper after DOM manipulation
-  swiper.update();
-}
-
-// Restore desktop structure
-function reorganizeForDesktop() {
-  // Only restructure if we've previously changed to mobile view
-  if (window.originalSwiperStructure) {
-    const swiperWrapper = document.querySelector('.swiper-wrapper');
-    swiperWrapper.innerHTML = window.originalSwiperStructure;
-    swiper.update();
-  }
-}
-
-// Handle tab click to move Swiper slide
-document.querySelectorAll('.nav-link').forEach((tab, index) => {
-  tab.addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent default link behavior
-    const slideIndex = parseInt(this.getAttribute('data-slide'));
-    swiper.slideTo(slideIndex); // Move to the selected slide
-
-    // Update active tab manually (Bootstrap won't auto-handle this)
-    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
 
 
 

@@ -1,0 +1,72 @@
+ <!-- <div class="swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="slide-content">
+              <div class="img-wrapper">
+                <img src="/images/slide_img_3.png" alt="Image 1">
+                <p class="img-wrapper-text">Enhance site speed, improve performance, and boost user experience for
+                  better engagement and conversions.</p>
+              </div>
+              <div class="img-wrapper">
+                <img src="/images/slide_img_2.png" alt="Image 2">
+                <p class="img-wrapper-text">Modernize design, improve UI/UX, and enhance functionality for a fresh,
+                  engaging website experience.</p>
+              </div>
+              <div class="img-wrapper">
+                <img src="/images/slide_img_1.png" alt="Image 3">
+                <p class="img-wrapper-text"> Increase visibility, improve rankings, and drive organic traffic with
+                  strategic SEO techniques.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slide-content">
+              <div class="img-wrapper">
+                <img src="/images/slide_img_4.jpg" alt="Image 4">
+                <p class="img-wrapper-text">Enhance site speed, improve performance, and boost user experience for
+                  better engagement and conversions.</p>
+              </div>
+              <div class="img-wrapper">
+                <img src="/images/slide_img_9.jpg" alt="Image 5">
+                <p class="img-wrapper-text">Increase visibility, improve rankings, and drive organic traffic with
+                  strategic SEO techniques.</p>
+              </div>
+              <div class="img-wrapper">
+                <img src="/images/slide_img_6.jpg" alt="Image 6">
+                <p class="img-wrapper-text">Modernize design, improve UI/UX, and enhance functionality for a fresh,
+                  engaging website experience.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="slide-content">
+
+              <div class="img-wrapper">
+                <img src="/images/slide_img_7.jpg" alt="Image 7">
+                <p class="img-wrapper-text">Enhance site speed, improve performance, and boost user experience for
+                  better engagement and conversions.</p>
+              </div>
+
+              <div class="img-wrapper">
+                <img src="/images/slide_img_8.jpg" alt="Image 8">
+                <p class="img-wrapper-text">Modernize design, improve UI/UX, and enhance functionality for a fresh,
+                  engaging website experience.</p>
+              </div>
+
+              <div class="img-wrapper">
+                <img src="/images/slide_img_9.jpg" alt="Image 9">
+                <p class="img-wrapper-text">Increase visibility, improve rankings, and drive organic traffic with
+                  strategic SEO techniques.</p>
+              </div>
+
+            </div>
+          </div>
+
+
+      <div class="swiper-button-next swiper-button-next-3"></div>
+      <div class="swiper-button-prev swiper-button-prev-3"></div>
+        </div> -->

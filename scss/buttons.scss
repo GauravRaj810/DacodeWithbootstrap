@@ -1,19 +1,21 @@
+// Global Button Styles
 .btn {
   border-radius: 9999px;
   color: $clr-white;
   padding: 10px 25px;
-  
   transition: all 0.3s ease-in-out;
   transform-origin: center bottom; // Keeps scaling stable
-  font-size: 16px; // Default size
+  font-size: 16px;
+
   &:hover {
     color: $clr-black;
     background: $primary-clr;
     border: 1px solid transparent;
-    transform: scale(1.05) translateY(3px); // Slight scale & downward move
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15); // Soft shadow effect
+    transform: scale(1.05) translateY(3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+
     @media (max-width: 768px) {
-      transform: scale(1.03) translateY(2px); // Reduce hover effect on smaller screens
+      transform: scale(1.03) translateY(2px);
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     }
     @media (max-width: 576px) {
@@ -21,27 +23,40 @@
       box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
     }
   }
-}
 
-.btn-primary{
-    background: $secondry-clr;
-    border: 1px solid transparent !important;
-}
-
-
-.request-btn {
-  @media (max-width: 1200px) {
-    display: none;
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
   }
 }
 
+// Primary Button
+.btn-primary {
+  background: $secondry-clr;
+  border: 1px solid transparent !important;
+
+  &:hover {
+    background: $primary-clr !important;
+    color: $clr-black !important;
+  }
+
+  &:focus,
+  &:active {
+    background: $primary-clr !important;
+    color: $clr-black !important;
+    border: 1px solid transparent !important;
+  }
+}
+
+// Outline Primary Button
 .btn-outline-primary {
   color: $primary-clr;
   padding: 10px 25px;
   border: 1px solid $primary-clr !important;
   transition: all 0.3s ease-in-out;
-  transform-origin: center bottom; // Keeps scaling stable
-  font-size: 16px; // Default size
+  transform-origin: center bottom;
+  font-size: 16px;
 
   @media (max-width: 1000px) {
     padding: 8px 20px;
@@ -62,10 +77,11 @@
     color: $clr-white;
     background: $primary-clr;
     border: 1px solid transparent;
-    transform: scale(1.05) translateY(3px); // Slight scale & downward move
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15); // Soft shadow effect
+    transform: scale(1.05) translateY(3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+
     @media (max-width: 768px) {
-      transform: scale(1.03) translateY(2px); // Reduce hover effect on smaller screens
+      transform: scale(1.03) translateY(2px);
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     }
     @media (max-width: 576px) {
@@ -73,42 +89,65 @@
       box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
     }
   }
+
+  &:focus,
+  &:active {
+    color: $clr-white !important;
+    background: $primary-clr !important;
+    border: 1px solid transparent !important;
+  }
 }
 
+// Danger Button
+.btn-danger {
+  padding: 13px 40px;
+  margin: 0 auto;
+  z-index: 999;
+  background: $clr-black;
+  color: $clr-white;
+
+  &:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+    color: $clr-black !important;
+    background: $secondry-clr !important;
+  }
+
+  &:focus,
+  &:active {
+    color: $clr-black !important;
+    background: $secondry-clr !important;
+    border: 1px solid transparent !important;
+  }
+}
+
+// See Button Styles
+.see-btn {
+  transform: translateY(-20px);
+  max-width: 150px;
+  margin: auto;
+
+  @media (max-width: 576px) {
+    transform: translate(20px, -20px);
+  }
+}
+
+// Button Wrapper for Responsive Display
 .btn-wrapper {
   z-index: 1;
+
   @media (max-width: 768px) {
     display: flex;
     justify-content: center;
   }
+
   @media (max-width: 576px) {
     gap: 8px !important;
   }
 }
 
-// see all btn 
-.btn-danger{
-  padding: 13px 40px;
-  margin: 0 auto;
-  z-index: 999px;
-  background: $clr-black;
-  color: $clr-white;
-}
-.btn-danger:hover{
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
-  color: $clr-black;
-  background: $secondry-clr;
-}
-
-// see button - 
-
-.see-btn{
-  transform: translateY(-20px);
-  max-width: 150px;
-  margin:  auto;
-  @media(max-width:576px){
-    transform: translate(20px, -20px);
+// Hide .request-btn on Small Screens
+.request-btn {
+  @media (max-width: 1200px) {
+    display: none;
   }
 }
-
-

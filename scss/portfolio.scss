@@ -1,11 +1,11 @@
-
 /* -------------------- Portfolio Section -------------------- */
 .portfolio-section {
   position: relative;
   padding: 80px 0;
   overflow: hidden;
-  @media(max-width:576px){
-    padding: 50px 0 ;
+
+  @media (max-width: 576px) {
+    padding: 50px 0;
   }
 
   .portfolio-title {
@@ -20,6 +20,7 @@
       line-height: 35px;
       margin-bottom: 40px;
     }
+
     @media (max-width: 768px) {
       font-size: 40px;
       line-height: 35px;
@@ -44,77 +45,70 @@
 .portfolio-section::after {
   content: "";
   position: absolute;
-  top: 60%;
+  top: 65%;
   left: 0;
   width: 100%;
-  height: 70%;
+  height: 440px; /* Corrected to 440px */
   background: $primary-clr;
   z-index: -1;
 }
 
-/* -------------------- Swiper Styles -------------------- */
-.swiper {
-  width: 100%;
-  height: auto;
-  position: relative;
+/* Tab pane styling */
+.tab-pane {
+  padding: 20px 0;
+
+  .swiper-container {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    max-width: 1210px;
+  }
+
+  &.show.active {
+    .swiper-container {
+      visibility: visible;
+      height: 350px; /* Set height when active */
+      overflow: visible;
+    }
+  }
 }
 
-/* Slide Content Layout */
-.slide-content {
+/* Swiper Styling */
+.swiper-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  margin: 0 auto;
+
   gap: 20px;
-  
-  @media (max-width: 992px) {
-    gap: 15px;
-  }
-  
-  @media (max-width: 768px) {
-    flex-direction: row; // Keep as row for swiper to handle
-  }
 }
 
-/* Image Wrapper */
-.img-wrapper {
+.swiper-slide {
+  position: relative;
+  flex: 0 0 33.33%; /* Ensure 3 images are visible at once */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 30%;
-  
-  @media (max-width: 768px) {
-    width: 100%; // Take full width in mobile
+  justify-content: start;
+
+  img {
+    width: 100%;
+    min-height: 260px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  p {
+    display: flex;
   }
 }
 
-/* Image Styles */
-.img-wrapper img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 10px;
-  
-  @media (max-width: 768px) {
-    max-width: 100%; // Full width in mobile
-  }
+.img-wrapper {
+  padding-bottom: 20px;
 }
 
-/* Image Text */
-.img-wrapper-text {
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 1.5;
-  
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
-}
-/* -------------------- Swiper Navigation Buttons -------------------- */
+/* Navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: 40%;
+  top: 68%;
   transform: translateY(-50%);
   background-color: $clr-white;
   width: 45px;
@@ -124,20 +118,24 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 
   @media (max-width: 1200px) {
-    
-     top: 40%;
+    top: 50%;
   }
-  @media (max-width: 998px) {
-    
-     top: 30%;
+
+  @media (max-width: 992px) {
+    top: 45%;
   }
+
   @media (max-width: 768px) {
     top: 50%;
-    
     width: 35px;
     height: 35px;
+  }
+
+  @media (max-width: 576px) {
+    top: 55%; /* Move down slightly for small screens */
   }
 }
 
@@ -153,10 +151,19 @@
   }
 }
 
+.swiper-button-next {
+  right: 5%;
+}
+
+.swiper-button-prev {
+  left: 5%;
+}
+
 /* -------------------- Tabs Styling -------------------- */
-.nav-tabs {
+.nav-pills {
+  background: none;
   justify-content: center;
-  border-bottom: none;
+  border-bottom: none !important;
   display: flex;
   gap: 20px;
   padding-bottom: 60px;
@@ -166,6 +173,7 @@
     gap: 10px;
     padding-bottom: 30px;
   }
+
   @media (max-width: 576px) {
     flex-wrap: wrap;
     gap: 5px;
@@ -174,11 +182,11 @@
 }
 
 /* Default Tab Styling */
-.nav-tabs .nav-link {
+.nav-pills .nav-link {
   color: $secondry-clr;
   border: 2px solid transparent;
   border-radius: 30px;
-  padding: 8px 18px;
+  padding: 8px 18px !important;
   font-weight: 500;
   transition: $transition-all;
 
@@ -189,17 +197,16 @@
 }
 
 /* Hover Effect */
-.nav-tabs .nav-link:hover {
+.nav-pills .nav-link:hover {
   border: 2px solid $secondry-clr;
   background: rgba(123, 192, 227, 0.1);
 }
 
 /* Active Tab Styling */
-.nav-tabs .nav-link.active {
-  background: white;
+.nav-pills .nav-link.active {
+  background: $clr-white;
   border: 2px solid $secondry-clr;
   color: $secondry-clr;
   border-radius: 30px;
   font-weight: bold;
 }
-
