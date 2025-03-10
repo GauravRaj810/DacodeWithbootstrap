@@ -36,12 +36,13 @@
 }
 
 .top-link {
+  z-index: 9999;
   position: fixed;
   bottom: 80px;
   right: 30px;
   background: $secondry-clr;
-  color: #FFFFFF;
-  padding: 15px 20px;
+  color: $clr-white;
+  padding: 12px 18px;
   border-radius: 5px;
   text-decoration: none;
   font-size: 16px;

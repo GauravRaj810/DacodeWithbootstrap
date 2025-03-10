@@ -130,6 +130,11 @@
     transform: translate(20px, -20px);
 
   }
+  @media (max-width: 389px) {
+    transform: translate(20px, -20px);
+    transform: translateY(-80px);
+
+  }
 }
 
 // Button Wrapper for Responsive Display
@@ -152,3 +157,39 @@
     display: none;
   }
 }
+
+
+
+.btn-info {
+  padding: 12px 50px !important; 
+  border: 2px solid $secondry-clr;
+  margin: 0 auto;
+  z-index: 999;
+  background: transparent;
+  color: $secondry-clr;
+  border-radius: 30px;
+
+  font-weight: 500;
+  transition: $transition-all;
+   
+  @media (max-width: 768px) {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  &:hover {
+  color: $clr-white;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+    border: 2px solid $secondry-clr;
+    background:$secondry-clr
+
+  }
+
+  &:focus,
+  &:active {
+    color: $clr-white !important;
+    background: $secondry-clr !important;
+    border: 2px solid transparent !important;
+  }
+}
+
