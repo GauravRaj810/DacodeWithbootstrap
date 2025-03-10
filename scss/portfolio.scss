@@ -2,10 +2,10 @@
 .portfolio-section {
   position: relative;
   padding: 80px 0;
-  overflow: hidden;
+  overflow: visible;
 
   @media (max-width: 576px) {
-    padding: 50px 0;
+    padding: 10px 0;
   }
 
   .portfolio-title {
@@ -44,122 +44,138 @@
 /* Background effect (halfway) */
 .portfolio-section::after {
   content: "";
+  top: 500px;
   position: absolute;
-  top: 65%;
+ height: 400px;
   left: 0;
   width: 100%;
-  height: 440px; /* Corrected to 440px */
+
   background: $primary-clr;
   z-index: -1;
-}
-
-/* Tab pane styling */
-.tab-pane {
-  padding: 20px 0;
-
-  .swiper-container {
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    max-width: 1210px;
-  }
-
-  &.show.active {
-    .swiper-container {
-      visibility: visible;
-      height: 350px; /* Set height when active */
-      overflow: visible;
-    }
+  @media(max-width: 576px){
+    top: 390px;
+    height: 300px;
   }
 }
 
-/* Swiper Styling */
-.swiper-wrapper {
-  display: flex;
-  margin: 0 auto;
-
-  gap: 20px;
-}
-
-.swiper-slide {
-  position: relative;
-  flex: 0 0 33.33%; /* Ensure 3 images are visible at once */
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-
-  img {
-    width: 100%;
-    min-height: 260px;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-
-  p {
-    display: flex;
-  }
-}
-
-.img-wrapper {
-  padding-bottom: 20px;
-}
-
-/* Navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: 68%;
+  top: 38%;
   transform: translateY(-50%);
-  background-color: $clr-white;
-  width: 45px;
-  height: 45px;
+  
+  background-color: whitesmoke;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Increased z-index */
+  
+  /* Ensure the arrows are above the images and always visible */
+  pointer-events: auto; /* Allow interaction with arrows if needed */
 
   @media (max-width: 1200px) {
-    top: 50%;
+    top: 30%;
   }
-
-  @media (max-width: 992px) {
-    top: 45%;
-  }
-
+ 
   @media (max-width: 768px) {
     top: 50%;
     width: 35px;
     height: 35px;
+ 
   }
-
-  @media (max-width: 576px) {
-    top: 55%; /* Move down slightly for small screens */
+  @media (min-width: 330px) {
+    top:35%; /* Adjust position on smaller screens */
   }
 }
-
-/* Arrow Icon Styling */
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 20px;
   color: $secondry-clr;
   font-weight: bold;
-
+  
+  /* Add a transparent background to make arrows stand out more */
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  
+  @media (max-width: 1200px) {
+    font-size: 16px;
+  }
   @media (max-width: 768px) {
     font-size: 16px;
   }
 }
 
-.swiper-button-next {
-  right: 5%;
+
+
+ // ********* swiper styling **********
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  flex-direction: column;
+  gap: 30px;
+  font-size: 18px;
+  display: flex;
+  p {
+    justify-content: stretch;
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 170%;
+    @media(max-width: 576px){
+      justify-content: stretch;
+    font-weight: 400;
+    font-size: 16px;
+
+      margin-bottom: 1px;
+    }
+  }
+}
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}
+.swiper-wrapper {
+  height: 441px;
+}
+.slider-img img {
+  border-radius: 12px;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-slide-active{
+  margin-bottom: 2px;
 }
 
-.swiper-button-prev {
-  left: 5%;
+/*-------------------- Tabs Styling -------------------- */
+.tab-content {
+  position: relative;
 }
 
-/* -------------------- Tabs Styling -------------------- */
+/* Preloader styling */
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.preloader__item {
+  max-width: 100px;
+  max-height: 100px;
+}
 .nav-pills {
   background: none;
   justify-content: center;
@@ -173,7 +189,6 @@
     gap: 10px;
     padding-bottom: 30px;
   }
-
   @media (max-width: 576px) {
     flex-wrap: wrap;
     gap: 5px;
@@ -189,19 +204,16 @@
   padding: 8px 18px !important;
   font-weight: 500;
   transition: $transition-all;
-
   @media (max-width: 768px) {
     padding: 6px 14px;
     font-size: 14px;
   }
 }
-
 /* Hover Effect */
 .nav-pills .nav-link:hover {
   border: 2px solid $secondry-clr;
   background: rgba(123, 192, 227, 0.1);
 }
-
 /* Active Tab Styling */
 .nav-pills .nav-link.active {
   background: $clr-white;

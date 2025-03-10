@@ -21,55 +21,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// var swiper = new Swiper(".mySwiper", {
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-// });
-
-
-
-// Initialize Swiper for active tab on page load
-var activeTabId = document.querySelector('.tab-pane.active').id;
-initSwiper('#' + activeTabId + ' .swiper-container');
-
-// Initialize Swiper when tab is clicked
-document.querySelectorAll('[data-bs-toggle="pill"]').forEach(function(tabEl) {
-  tabEl.addEventListener('shown.bs.tab', function (event) {
-    var targetTabId = event.target.getAttribute('data-bs-target');
-    initSwiper(targetTabId + ' .swiper-container');
-  });
+// mulitple img swiper using swiper js lib ... 
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 30,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    992: {
+      slidesPerView: 3,
+    }
+  },
 });
 
-// Function to initialize Swiper
-function initSwiper(selector) {
-  var swiper = new Swiper(selector, {
-    slidesPerView: 3,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: selector + ' .swiper-button-next',
-      prevEl: selector + ' .swiper-button-prev'
-    },
-    loop: true,
-    centeredSlides: true,
-    slideToClickedSlide: true,
-    breakpoints: {
-      // when window width is <= 768px
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 10
-      },
-      // when window width is <= 576px
-      576: {
-        slidesPerView: 1,
-        spaceBetween: 10
-      }
-    }
-  });
-}
 
 
 
 
 
+// preloader
+const preloader = document.querySelector(".preloader");  // hide when the page fully loaded 
+window.addEventListener("load", function () {
+  preloader.classList.add("hide-preloader");
+});
+
+
+const topLink = document.querySelector(".top-link");
+
+        // Show button on scroll
+        window.addEventListener("scroll", function () {
+            const scrollHeight = window.scrollY;
+            if (scrollHeight > 300) {
+                topLink.classList.add("show-link");
+            } else {
+                topLink.classList.remove("show-link");
+            }
+        });
+
+        // Smooth scroll to top on click
+        topLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });

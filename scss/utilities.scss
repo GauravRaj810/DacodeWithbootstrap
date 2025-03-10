@@ -27,3 +27,40 @@
   }
 }
 
+
+.top-link.show-link {
+  opacity: 1;
+  visibility: visible;
+  animation: bounce 1s infinite ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.top-link {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  background: $secondry-clr;
+  color: #FFFFFF;
+  padding: 15px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  animation: bounce 1s infinite ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
