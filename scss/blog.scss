@@ -1,9 +1,21 @@
 .blog-section {
-  margin: 100px 0 0 0;
+
   background: $light-bg-clr;
 }
 .blog-section-wrapper {
+  display: flex;
+
   padding: 150px 0 150px 150px;
+  @media(max-width: 1200px){
+    text-align: left;
+    flex-direction: column;
+    padding: 100px 0 100px 60px;
+  }
+  @media(max-width: 992px){
+
+
+  padding: 80px 20px;
+  }
 }
 .news-article-wrapper {
   max-width: 550px;
@@ -36,7 +48,7 @@
 }
 
 .swiper-horizontal{
-    height: auto;
+    min-height: 350px;
 }
 
 .blog-swiper .swiper-slide {
@@ -77,6 +89,9 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  @media(max-width: 992px){
+    display: none;
+  }
 }
 
 .blog-button-next {

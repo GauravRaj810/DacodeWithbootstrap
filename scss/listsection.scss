@@ -62,7 +62,8 @@
   }
   
   .main-head-text {
-    color: $primary-clr
+    color: $primary-clr;
+   
   }
   .lead{
     font-weight: 500;
@@ -74,6 +75,9 @@
     margin-bottom: 3rem;
     @media(max-width:1200px){
       padding-left: 80px;
+    }
+    @media(max-width:576px){
+      padding-left: 60px;
     }
   }
   .process-desc{
@@ -101,6 +105,10 @@
     color: $primary-clr;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     z-index: 2; /* Ensure step number appears above the dashed line */
+    @media(max-width:576px){
+      width: 45px;
+      height: 45px;
+    }
   }
   
   /* Dashed line connecting steps */

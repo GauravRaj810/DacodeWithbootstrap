@@ -252,20 +252,8 @@ html {
 }
 
 .see-btn {
-  transform: translateY(-20px);
   max-width: 150px;
   margin: auto;
-}
-@media (max-width: 576px) {
-  .see-btn {
-    transform: translate(20px, -20px);
-  }
-}
-@media (max-width: 389px) {
-  .see-btn {
-    transform: translate(20px, -20px);
-    transform: translateY(-80px);
-  }
 }
 
 .btn-wrapper {
@@ -321,6 +309,21 @@ html {
 .footer-section {
   background: #60E1CB url("/images/fotoer-line.png") no-repeat;
   padding: 0 150px 80px 150px;
+}
+@media (max-width: 992px) {
+  .footer-section {
+    padding: 0 100px 60px 100px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 0 80px 50px 80px;
+  }
+}
+@media (max-width: 562px) {
+  .footer-section {
+    padding: 0 40px 40px 40px;
+  }
 }
 
 .footer-container {
@@ -413,6 +416,11 @@ hr {
 .footer-links {
   display: flex;
   justify-content: space-around;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .underline {
@@ -746,10 +754,9 @@ body {
   background: #60E1CB;
   z-index: -1;
 }
-@media (max-width: 576px) {
+@media (max-width: 780px) {
   .portfolio-section::after {
-    top: 390px;
-    height: 300px;
+    display: none;
   }
 }
 
@@ -779,6 +786,7 @@ body {
 @media (max-width: 768px) {
   .swiper-button-next,
   .swiper-button-prev {
+    display: none !important;
     top: 50%;
     width: 35px;
     height: 35px;
@@ -879,6 +887,7 @@ body {
 }
 @media (max-width: 768px) {
   .nav-pills {
+    display: none;
     flex-wrap: wrap;
     gap: 10px;
     padding-bottom: 30px;
@@ -1048,6 +1057,11 @@ body {
     padding-left: 80px;
   }
 }
+@media (max-width: 576px) {
+  .process-step {
+    padding-left: 60px;
+  }
+}
 
 @media (max-width: 576px) {
   .process-desc {
@@ -1073,6 +1087,12 @@ body {
   color: #60E1CB;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   z-index: 2; /* Ensure step number appears above the dashed line */
+}
+@media (max-width: 576px) {
+  .step-number {
+    width: 45px;
+    height: 45px;
+  }
 }
 
 /* Dashed line connecting steps */
@@ -1103,13 +1123,8 @@ body {
   }
 }
 .testimonal-section {
-  margin: 150px 0;
+  margin: 150px 0 0 0;
   padding: 0 15px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .testimonal-subtitle {
@@ -1138,9 +1153,8 @@ body {
 }
 
 .testimonial-gallery-top {
-  height: 250px;
-  width: 100%;
-  margin-bottom: 60px;
+  height: auto !important;
+  min-height: 150px; /* Adjust as needed */
 }
 
 .testimonial-gallery-thumbs {
@@ -1173,7 +1187,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: auto;
   transition: transform 0.3s ease;
 }
 
@@ -1225,7 +1239,7 @@ body {
 /* Thumbnail styles */
 .testimonial-gallery-thumbs .swiper-slide {
   width: 33.33%;
-  height: 100%;
+  height: 50%;
   opacity: 0.5;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1241,8 +1255,13 @@ body {
 
 /* Swiper wrapper - making thumbnails closer */
 .testimonial-gallery-thumbs .swiper-wrapper {
+  height: 50%;
   justify-content: center;
   gap: 5px;
+}
+
+.testimonial-section .swiper-horizontal {
+  height: auto !important;
 }
 
 /* Custom Navigation buttons */
@@ -1259,6 +1278,12 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
+}
+@media (max-width: 992px) {
+  .custom-next-button,
+  .custom-prev-button {
+    display: none !important;
+  }
 }
 
 .custom-next-button:hover,
@@ -1347,12 +1372,24 @@ body {
   }
 }
 .blog-section {
-  margin: 100px 0 0 0;
   background: #e9fbf8;
 }
 
 .blog-section-wrapper {
+  display: flex;
   padding: 150px 0 150px 150px;
+}
+@media (max-width: 1200px) {
+  .blog-section-wrapper {
+    text-align: left;
+    flex-direction: column;
+    padding: 100px 0 100px 60px;
+  }
+}
+@media (max-width: 992px) {
+  .blog-section-wrapper {
+    padding: 80px 20px;
+  }
 }
 
 .news-article-wrapper {
@@ -1386,7 +1423,7 @@ body {
 }
 
 .swiper-horizontal {
-  height: auto;
+  min-height: 350px;
 }
 
 .blog-swiper .swiper-slide {
@@ -1425,6 +1462,12 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+}
+@media (max-width: 992px) {
+  .blog-button-next,
+  .blog-button-prev {
+    display: none;
+  }
 }
 
 .blog-button-next {

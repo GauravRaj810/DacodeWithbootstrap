@@ -7,7 +7,6 @@
   @media (max-width: 576px) {
     padding: 10px 0;
   }
-
   .portfolio-title {
     font-weight: 700;
     font-size: 48px;
@@ -20,14 +19,12 @@
       line-height: 35px;
       margin-bottom: 40px;
     }
-
     @media (max-width: 768px) {
       font-size: 40px;
       line-height: 35px;
       margin-bottom: 40px;
     }
   }
-
   .portfolio-subtitle {
     color: $secondry-clr;
     font-weight: 700;
@@ -40,7 +37,6 @@
     }
   }
 }
-
 /* Background effect (halfway) */
 .portfolio-section::after {
   content: "";
@@ -49,12 +45,10 @@
  height: 400px;
   left: 0;
   width: 100%;
-
   background: $primary-clr;
   z-index: -1;
-  @media(max-width: 576px){
-    top: 390px;
-    height: 300px;
+  @media(max-width: 780px){
+    display: none;
   }
 }
 
@@ -63,7 +57,6 @@
   position: absolute;
   top: 43% !important;
   transform: translateY(-50%);
-  
   background-color: whitesmoke;
   width: 55px !important;
   height: 55px !important;
@@ -82,6 +75,7 @@
   }
  
   @media (max-width: 768px) {
+    display: none !important;
     top: 50%;
     width: 35px;
     height: 35px;
@@ -153,6 +147,7 @@
 /*-------------------- Tabs Styling -------------------- */
 .tab-content {
   position: relative;
+
 }
 
 /* Preloader styling */
@@ -182,6 +177,7 @@
   padding-bottom: 60px;
 
   @media (max-width: 768px) {
+    display: none;
     flex-wrap: wrap;
     gap: 10px;
     padding-bottom: 30px;

@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // *************** blog swiper *****************
 var blogSwiper = new Swiper(".blog-swiper", {
-  slidesPerView: 3,
+  slidesPerView: 3, // Default to 3 slides per view
   centeredSlides: true,
-  spaceBetween: 30,
+  spaceBetween: 30, // Default space between slides
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -135,13 +135,70 @@ var blogSwiper = new Swiper(".blog-swiper", {
     nextEl: ".blog-button-next",
     prevEl: ".blog-button-prev",
   },
+  breakpoints: {
+    // When the screen width is <= 992px
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: null, // Disable next button
+        prevEl: null, // Disable prev button
+      },
+    },
+    // When the screen width is <= 768px
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: null, // Disable next button
+        prevEl: null, // Disable prev button
+      },
+    },
+    // When the screen width is <= 480px
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: null, // Disable next button
+        prevEl: null, // Disable prev button
+      },
+    },
+    // When the screen width is <= 480px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: null, // Disable next button
+        prevEl: null, // Disable prev button
+      },
+    },
+  },
   on: {
     init: function (swiper) {
-      document.querySelector(".blog-button-prev").style.display = swiper.isBeginning ? "none" : "block";
+      // Dynamically hide the prev button based on screen width
+      if (window.innerWidth <= 992) {
+        document.querySelector(".blog-button-prev").style.display = "none";
+        document.querySelector(".blog-button-next").style.display = "none";
+      } else {
+        document.querySelector(".blog-button-prev").style.display = swiper.isBeginning ? "none" : "block";
+        document.querySelector(".blog-button-next").style.display = "block";
+      }
     },
     slideChange: function (swiper) {
-      document.querySelector(".blog-button-prev").style.display = swiper.isBeginning ? "none" : "block";
+      // Dynamically adjust the prev button visibility on slide change
+      if (window.innerWidth <= 992) {
+        document.querySelector(".blog-button-prev").style.display = "none";
+      } else {
+        document.querySelector(".blog-button-prev").style.display = swiper.isBeginning ? "none" : "block";
+      }
     }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  let swiperTop = document.querySelector(".testimonial-gallery-top");
+  if (swiperTop) {
+    swiperTop.style.height = "auto";
   }
 });
 
