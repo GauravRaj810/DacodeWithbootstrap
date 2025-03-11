@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// mulitple img swiper using swiper js lib ...
+//*************** mulitple img swiper ***************
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   navigation: {
@@ -39,13 +39,13 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-// preloader
+//*************** preloader***************
 const preloader = document.querySelector(".preloader"); // hide when the page fully loaded
 window.addEventListener("load", function () {
   preloader.classList.add("hide-preloader");
 });
 
-// top link and scrolling -
+//****************** top link and scrolling -******************
 
 const topLink = document.querySelector(".top-link");
 // Show button on scroll
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
       slideShadows: true,
     },
   });
+  //****************** thumb swiper ******************
 
-  // Initialize the thumbs gallery (profile pictures)
   const galleryThumbs = new Swiper('.testimonial-gallery-thumbs', {
     spaceBetween: 5,
     centeredSlides: true, // Center the active thumbnail
@@ -118,3 +118,32 @@ document.addEventListener('DOMContentLoaded', function() {
   galleryTop.controller.control = galleryThumbs;
   galleryThumbs.controller.control = galleryTop;
 });
+
+
+
+
+// *************** blog swiper *****************
+var blogSwiper = new Swiper(".blog-swiper", {
+  slidesPerView: 3,
+  centeredSlides: true,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".blog-button-next",
+    prevEl: ".blog-button-prev",
+  },
+  on: {
+    init: function (swiper) {
+      document.querySelector(".blog-button-prev").style.display = swiper.isBeginning ? "none" : "block";
+    },
+    slideChange: function (swiper) {
+      document.querySelector(".blog-button-prev").style.display = swiper.isBeginning ? "none" : "block";
+    }
+  }
+});
+
+
+

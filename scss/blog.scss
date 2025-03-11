@@ -1,32 +1,103 @@
-.blog-section{
-    margin: 100px 0;
-    background: $light-bg-clr;
+.blog-section {
+  margin: 100px 0 0 0;
+  background: $light-bg-clr;
 }
-.blog-section-wrapper{
-    padding: 150px 0;
+.blog-section-wrapper {
+  padding: 150px 0 150px 150px;
 }
-.news-article-wrapper{
-    max-width: 550px;
-    h2{
-        font-weight: 700;
-        font-size: 48px;
-        line-height: 100%;
-    }
+.news-article-wrapper {
+  max-width: 550px;
+  h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+  }
 
-    h3{
+  h3 {
     color: $secondry-clr;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 100%;
-        letter-spacing: 0.6%;
-        
-    }
-    p{
-        font-family: DM Sans;
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 177%;
-        letter-spacing: 0%;
-        
-    }
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0.6%;
+  }
+  p {
+    font-family: DM Sans;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 177%;
+    letter-spacing: 0%;
+  }
+}
+.blog-swiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.swiper-horizontal{
+    height: auto;
+}
+
+.blog-swiper .swiper-slide {
+    padding: 83px 35px 55px 34px;
+
+  background: #fff;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  h3 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  p {
+    font-family: DM Sans;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 162%;
+    letter-spacing: 0%;
+    text-align: justify;
+  }
+}
+
+/* Unique Button Styles */
+.blog-button-next,
+.blog-button-prev {
+  background: $secondry-clr; /* Orange button */
+  color: $clr-white;
+  height: 55px;
+  width: 55px;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.blog-button-next {
+  right: 10px;
+}
+
+.blog-button-prev {
+  left: 10px;
+  display: none; /* Initially hidden */
+}
+
+.blog-button-next:hover,
+.blog-button-prev:hover {
+  background: #4d97bd; /* Darker orange on hover */
+}
+
+/* Pagination Style */
+.blog-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
 }

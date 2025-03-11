@@ -1,112 +1,114 @@
+body{
+  font-family: "DM Sans", sans-serif;
+}
 
-  
-body {
-    font-family: "DM Sans", sans-serif;
-  }
-  .hero-section {
-    padding: 220px 0;
-    position: relative;
-    background: url(/images/hero.png);
-    background-size: 50%; // Default size for large screens
-    background-repeat: no-repeat;
-    background-position: right center; // Keep image aligned to the right
-  
-    @media (max-width: 1200px) {
-      padding: 180px 0;
-      background-size: 60%; // Reduce background image size
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 100px;
+}
+.hero-section {
+  padding: 220px 0;
+  position: relative;
+  background: url(/images/hero.png);
+  background-size: 50%; // Default size for large screens
+  background-repeat: no-repeat;
+  background-position: right center; // Keep image aligned to the right
 
-    @media (max-width: 992px) {
-      padding: 150px 0;
-      background-size: 55%;
-      background-position: center right; // Adjust for medium screens
-    }
-  
-    @media (max-width: 768px) {
-      padding: 80px 0 100px 0;
-      background-size: 55%; /* Adjust size of the background image */
-      background-position: 120px 300px; /* Ensure the image is aligned to the bottom */
-    }
-  
-    @media (max-width: 576px) {
-      padding: 60px 20px;
-      background-size: 60%;
-      background-position: 90px 250px; /* Ensure the image is aligned to the bottom */
-    }
-    @media (max-width: 480px) {
-      padding: 60px 20px;
-      background-size: 60%;
-      background-position: 80px 290px; /* Ensure the image is aligned to the bottom */
-    }
-    @media (max-width: 380px) {
-      padding: 60px 20px;
-      background-size: 60%;
-      background-position: 60px 330px; /* Ensure the image is aligned to the bottom */
-    }
+  @media (max-width: 1200px) {
+    padding: 180px 0;
+    background-size: 60%; // Reduce background image size
   }
-  
-  .hero-content {
-    max-width: 650px;
-    @media (max-width: 992px) {
-      max-width: 550px;
-    }
-  
-    @media (max-width: 768px) {
-      max-width: 100%;
-      text-align: center; // Center content for small screens
-      padding: 0 20px 180px 20px;
-    }
-    @media (max-width: 576px) {
-      max-width: 100%;
-      text-align: center; // Center content for small screens
-      padding: 0 30px 140px 30px;
-    }
+
+  @media (max-width: 992px) {
+    padding: 150px 0;
+    background-size: 55%;
+    background-position: center right; // Adjust for medium screens
   }
-  .hero-section-title {
-    margin-bottom: 29px;
-    font-weight: 900;
-    font-size: 58px;
-    line-height: 65.25px;
-    letter-spacing: -1.5%;
-  
-    @media (max-width: 992px) {
-      font-size: 48px;
-      line-height: 55px;
-    }
-    @media (max-width: 768px) {
-      font-size: 35px;
-      line-height: 45px;
-      margin-bottom: 5px;
-    } 
-    @media (max-width: 576px) {
-      font-size: 30px;
-      line-height: 35px;
-      margin-bottom: 5px;
-    }
+
+  @media (max-width: 768px) {
+    padding: 80px 0 100px 0;
+    background-size: 55%; /* Adjust size of the background image */
+    background-position: 120px 300px; /* Ensure the image is aligned to the bottom */
   }
-  
-  .hero-section-desc {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 31.44px;
-    text-align: justify;
-  
-    @media (max-width: 992px) {
-      font-size: 18px;
-      line-height: 28px;
-    }
-  
-    @media (max-width: 768px) {
-      font-size: 15px;
-      line-height: 24px;
-      text-align: center; // Center text on small screens
-      margin-bottom: 10px;
-    }
-  
-    @media (max-width: 576px) {
-      font-size: 14px;
-      line-height: 22px;
-      margin-bottom: 12px;
-    }
+
+  @media (max-width: 576px) {
+    padding: 60px 20px;
+    background-size: 60%;
+    background-position: 90px 250px; /* Ensure the image is aligned to the bottom */
   }
-  
+  @media (max-width: 480px) {
+    padding: 60px 20px;
+    background-size: 60%;
+    background-position: 80px 290px; /* Ensure the image is aligned to the bottom */
+  }
+  @media (max-width: 380px) {
+    padding: 60px 20px;
+    background-size: 60%;
+    background-position: 60px 330px; /* Ensure the image is aligned to the bottom */
+  }
+}
+
+.hero-content {
+  max-width: 650px;
+  @media (max-width: 992px) {
+    max-width: 550px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    text-align: center; // Center content for small screens
+    padding: 0 20px 180px 20px;
+  }
+  @media (max-width: 576px) {
+    max-width: 100%;
+    text-align: center; // Center content for small screens
+    padding: 0 30px 140px 30px;
+  }
+}
+.hero-section-title {
+  margin-bottom: 29px;
+  font-weight: 900;
+  font-size: 58px;
+  line-height: 65.25px;
+  letter-spacing: -1.5%;
+
+  @media (max-width: 992px) {
+    font-size: 48px;
+    line-height: 55px;
+  }
+  @media (max-width: 768px) {
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 5px;
+  }
+  @media (max-width: 576px) {
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 5px;
+  }
+}
+
+.hero-section-desc {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 31.44px;
+  text-align: justify;
+
+  @media (max-width: 992px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center; // Center text on small screens
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 12px;
+  }
+}

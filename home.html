@@ -44,10 +44,10 @@
         <div class="collapse navbar-collapse offset-2" id="navbarNav">
           <ul class="navbar-nav ms-auto ">
             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/services.html">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Case</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">DaCode Specialist</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Testimonial">Testimonial</a></li>
+            <li class="nav-item"><a class="nav-link" href="#footer">Contact Us</a></li>
           </ul>
         </div>
         <div class="request-btn">
@@ -83,7 +83,7 @@
   <!-- End of hero section  -->
 
   <!-- Service section  -->
-  <section class="services-section">
+  <section class="services-section" id="services">
     <div class="container">
       <h2 class="section-title">Our Services</h2>
       <p class="section-subtitle">
@@ -231,11 +231,11 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </div >
+  </section >
   <!--End of  Service section  -->
   <!-- portfolio sectioin  -->
-  <section class="portfolio-section">
+  <section class="portfolio-section" id="Portfolio" >
     <div class="container">
       <div class="row">
         <p class="portfolio-subtitle mb-3">Portfolio</p>
@@ -562,7 +562,7 @@
   </section>
   <!-- end of list section  -->
   <!-- Testimonial Section -->
-  <section class="testimonal-section">
+  <section class="testimonal-section" id="Testimonial">
     <div class="container">
       <div class="row mx-auto text-center">
         <p class="testimonal-subtitle mb-3">Testimonials</p>
@@ -679,7 +679,7 @@
                   <img src="/images/person-3.png" alt="Krunal Mali profile">
                 </div>
                 <h2>Krunal Mali</h2>
-                <p>Owner X</p>
+                <p>Owner X </p>
               </div>
             </div>
 
@@ -720,26 +720,125 @@
       </div>
     </div>
   </section>
-  <!-- end of testimonal section  -->
-  <!-- blog section  -->
+  <!--********* blog section ********* -->
   <section class="blog-section">
-    <div class="container">
-      <div class="blog-section-wrapper d-flex gap-3">
-        <div class="news-article-wrapper ">
-          <h3 class="mb-4">News & Articles</h3>
-          <h2 class="mb-3">DaCode Blog</h2>
-          <p class="mb-4">On daCode blog we will review the latest in web development for the SaaS-, tech- and crypto industry.</p>
-          <div class="blog-btn">
-            <button class="btn btn-info">See All</button>
+    <div class="blog-section-wrapper d-flex gap-3 align-items-center">
+      <!-- Left Content -->
+      <div class="news-article-wrapper">
+        <h3 class="mb-4">News & Articles</h3>
+        <h2 class="mb-3">DaCode Blog</h2>
+        <p class="mb-4">On DaCode blog, we will review the latest in web development for the SaaS-, tech-, and crypto
+          industry.</p>
+        <div class="blog-btn">
+          <button class="btn btn-info">See All</button>
+        </div>
+      </div>
+      <!-- Blog Swiper -->
+      <div class="swiper blog-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <h3>Why Your SaaS Business should use WordPress</h3>
+            <p>A content management system like WordPress can help you build a highly engaging website for your SaaS
+              business, with little to no effort</p>
+            <p class="read-more-arrow">
+              Read More <span><i class="fa-solid fa-arrow-right-long fa-lg"></i></span>
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <h3>A content management system like WordPres</h3>
+            <p>A content management system like WordPress can help you build a highly engaging website for your SaaS
+              business, with little to no effort</p>
+            <p class="read-more-arrow">
+              Read More <span><i class="fa-solid fa-arrow-right-long fa-lg"></i></span>
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <h3>Why Your SaaS Business should use WordPress</h3>
+            <p> can help you build a highly engaging website for with little to no effort s can help you build a highly
+              engaging website for business,</p>
+            <p class="read-more-arrow">
+              Read More <span><i class="fa-solid fa-arrow-right-long fa-lg"></i></span>
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <h3>A content management system like WordPres</h3>
+            <p> A content management system like WordPress can help you build a highly engaging website for your SaaS
+              business, with little to no effort</p>
+            <p class="read-more-arrow">
+              Read More <span><i class="fa-solid fa-arrow-right-long fa-lg"></i></span>
+            </p>
           </div>
         </div>
-       
+        <button class="blog-button-prev">❮</button>
+        <button class="blog-button-next">❯</button>
+        <div class="swiper-pagination"></div>
       </div>
+
     </div>
-
   </section>
-
-
+  <!-- End of blog section  -->
+  <!-- footer section  -->
+  <section class="footer-section">
+      <div class="footer-container">
+        <div class="footer-logo-container">
+          <div class="img-logo-wrapper mb-4">
+            <a href="#home"><img src="/images/logo 1.png" alt="DaCode Logo"></a>
+          </div>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+        </div>
+        <div class="footer-content">
+          <div class="footer-content-desc" id="footer">
+            <h3 class="">Work</h3>
+            <ul type="none">
+              <li>Blog</li>
+              <li>How We Work</li>
+              <li>Testimonials</li>
+            </ul>
+          </div>
+          <div class="footer-content-desc">
+            <h3 class="">Services</h3>
+            <ul type="none">
+              <li>Marketing Strategy</li>
+              <li>Website Optimization</li>
+              <li>Email Maerketing</li>
+            </ul>
+          </div>
+          <div class="footer-content-desc">
+            <h3 class="">Business Solution</h3>
+            <ul type="none">
+              <li>Partnership</li>
+              <li>About Project</li>
+              <li>Corporate</li>
+            </ul>
+          </div>
+          <div class="footer-content-desc ">
+              <h3 class="">Contact Us</h3>
+              <ul type="none" class="footer-links">
+                <a href="https://www.facebook.com/TMXGlobal/" >
+                  <li><i class="fa-brands fa-facebook"></i></li>
+                </a>
+                <a href="https://www.instagram.com/tmx_global_ltd/" >
+                  <li><i class="fa-brands fa-instagram style="></i></li>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=fun+with+gaurav" >
+                  <li><i class="fa-brands fa-youtube"></i></li>
+                </a>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="footer-copyright-wrapper">
+        <div class="footer-copy">
+          <p>© DaCode. 2025</p>
+        </div>
+        <div class="footer-desc">
+          <div class="item">FW</div>
+          <div class="item">TW</div>
+          <div class="item">IG</div>
+        </div>
+      </div>
+  </section>
 
 
 

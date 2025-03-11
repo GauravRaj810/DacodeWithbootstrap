@@ -91,23 +91,22 @@
     top:35%; /* Adjust position on smaller screens */
   }
 }
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #f0e6e6;
+}
+
+
+
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 35px !important;
   color: $secondry-clr;
   font-weight: bold;
-  
-  /* Add a transparent background to make arrows stand out more */
-  background-color: rgba(255, 255, 255, 0.5) !important; 
-  border-radius: 50%;
-  
-  @media (max-width: 1200px) {
-    font-size: 16px;
-  }
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
 }
+
 
 
 

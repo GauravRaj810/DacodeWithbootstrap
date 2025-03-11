@@ -34,6 +34,10 @@
   animation: bounce 1s infinite ease-in-out;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
+.top-link:hover{
+  background: #4d97bd;
+  color: $clr-white;
+}
 
 .top-link {
   z-index: 9999;
@@ -49,7 +53,7 @@
   font-weight: bold;
   opacity: 0;
   visibility: hidden;
-  animation: bounce 1s infinite ease-in-out;
+  animation: bounce 0.5s infinite ease-in-out;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
@@ -58,7 +62,7 @@
       transform: translateY(0);
   }
   40% {
-      transform: translateY(-10px);
+      transform: translateY(-20px);
   }
   60% {
       transform: translateY(-5px);
