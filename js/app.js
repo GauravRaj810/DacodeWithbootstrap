@@ -45,8 +45,9 @@ window.addEventListener("load", function () {
   preloader.classList.add("hide-preloader");
 });
 
-//****************** top link and scrolling -******************
 
+
+//****************** top link and scrolling -******************
 const topLink = document.querySelector(".top-link");
 // Show button on scroll
 window.addEventListener("scroll", function () {
@@ -62,6 +63,11 @@ topLink.addEventListener("click", function (e) {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+
+
+// testimonal swiper content --- 
+
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize the top gallery (testimonials content)
   const galleryTop = new Swiper('.testimonial-gallery-top', {
@@ -77,8 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
       slideShadows: true,
     },
   });
-  //****************** thumb swiper ******************
 
+
+//****************** thumb swiper ******************
   const galleryThumbs = new Swiper('.testimonial-gallery-thumbs', {
     spaceBetween: 5,
     centeredSlides: true, // Center the active thumbnail
@@ -122,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// *************** blog swiper *****************
+// *************** blog swiper ***************** 
 var blogSwiper = new Swiper(".blog-swiper", {
   slidesPerView: 3, // Default to 3 slides per view
   centeredSlides: true,
@@ -140,67 +147,65 @@ var blogSwiper = new Swiper(".blog-swiper", {
     992: {
       slidesPerView: 3,
       spaceBetween: 20,
-      navigation: {
-        nextEl: null, // Disable next button
-        prevEl: null, // Disable prev button
-      },
     },
     // When the screen width is <= 768px
     768: {
       slidesPerView: 2,
       spaceBetween: 15,
-      navigation: {
-        nextEl: null, // Disable next button
-        prevEl: null, // Disable prev button
-      },
     },
     // When the screen width is <= 480px
     480: {
       slidesPerView: 1,
       spaceBetween: 10,
-      navigation: {
-        nextEl: null, // Disable next button
-        prevEl: null, // Disable prev button
-      },
     },
-    // When the screen width is <= 480px
+    // When the screen width is <= 320px
     320: {
       slidesPerView: 1,
       spaceBetween: 10,
-      navigation: {
-        nextEl: null, // Disable next button
-        prevEl: null, // Disable prev button
-      },
     },
   },
   on: {
-    init: function (swiper) {
-      // Dynamically hide the prev button based on screen width
-      if (window.innerWidth <= 992) {
-        document.querySelector(".blog-button-prev").style.display = "none";
-        document.querySelector(".blog-button-next").style.display = "none";
-      } else {
-        document.querySelector(".blog-button-prev").style.display = swiper.isBeginning ? "none" : "block";
-        document.querySelector(".blog-button-next").style.display = "block";
-      }
+    init: function () {
+      updateNavigationVisibility();
+    },
+    resize: function () {
+      updateNavigationVisibility();
     },
     slideChange: function (swiper) {
-      // Dynamically adjust the prev button visibility on slide change
-      if (window.innerWidth <= 992) {
-        document.querySelector(".blog-button-prev").style.display = "none";
-      } else {
+      // Show/hide prev button based on if we're at the beginning
+      if (window.innerWidth > 992) {
         document.querySelector(".blog-button-prev").style.display = swiper.isBeginning ? "none" : "block";
+        document.querySelector(".blog-button-next").style.display = swiper.isEnd ? "none" : "block";
       }
     }
   }
 });
 
+// Function to update navigation buttons visibility based on screen width
+function updateNavigationVisibility() {
+  const prevBtn = document.querySelector(".blog-button-prev");
+  const nextBtn = document.querySelector(".blog-button-next");
+  
+  if (window.innerWidth <= 992) {
+    prevBtn.style.display = "none";
+    nextBtn.style.display = "none";
+  } else {
+    prevBtn.style.display = blogSwiper.isBeginning ? "none" : "block";
+    nextBtn.style.display = blogSwiper.isEnd ? "none" : "block";
+  }
+}
+
+// Add event listener for window resize
+window.addEventListener('resize', updateNavigationVisibility);
+
+// Make sure navigation is correctly set on page load
 document.addEventListener("DOMContentLoaded", function () {
+  // Update navigation visibility after a slight delay to ensure Swiper is fully initialized
+  setTimeout(updateNavigationVisibility, 100);
+  
+  // Fix for testimonial gallery height if it exists
   let swiperTop = document.querySelector(".testimonial-gallery-top");
   if (swiperTop) {
     swiperTop.style.height = "auto";
   }
 });
-
-
-
