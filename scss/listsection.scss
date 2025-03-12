@@ -3,6 +3,7 @@
 .list-wrapper{
     max-width: 1200px;
     margin: 0 auto;
+
   }
   .list-section{
     background: url(/images/Working\ Remotely.png);
@@ -10,6 +11,7 @@
     background-size: 50%;
     background-position: right 300px; // Keep image aligned to the right
     margin-top: 200px ;
+  
     padding-bottom: 200px;
     padding-left: 120px;
     @media(max-width:1200px){

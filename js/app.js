@@ -1,23 +1,32 @@
-// fixing header
 document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener("scroll", function () {
-    const navbar = document.getElementById("mainNav");
+  const navbar = document.getElementById("mainNav");
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const navbarCollapse = document.querySelector(".navbar-collapse");
 
-    if (window.scrollY > 50) {
-      // Change color after scrolling 50px
-      navbar.style.background = "#ffffff"; // White background when scrolled
-      navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)"; // Optional: add shadow for better UI
-    } else {
-      // Reset to original background based on screen size
+  // Close navbar when clicking on a nav link (for mobile view)
+  navLinks.forEach(link => {
+    link.addEventListener("click", function () {
       if (window.innerWidth < 992) {
-        navbar.style.background = "#d9fff4"; // Mobile background
-      } else {
-        navbar.style.background = "#ffffff"; // Desktop background
+        navbarToggler.click(); // Programmatically toggle the navbar
       }
+    });
+  });
+
+  // Change header background on scroll
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      navbar.style.background = "#ffffff";
+      navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+    } else {
+      navbar.style.background = window.innerWidth < 992 ? "#d9fff4" : "#ffffff";
       navbar.style.boxShadow = "none";
     }
   });
 });
+
+
+
 
 //*************** mulitple img swiper ***************
 var swiper = new Swiper(".mySwiper", {
@@ -26,6 +35,7 @@ var swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  grabCursor: true,
   breakpoints: {
     576: {
       slidesPerView: 1,
@@ -67,7 +77,6 @@ topLink.addEventListener("click", function (e) {
 
 
 // testimonal swiper content --- 
-
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize the top gallery (testimonials content)
   const galleryTop = new Swiper('.testimonial-gallery-top', {
@@ -88,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //****************** thumb swiper ******************
   const galleryThumbs = new Swiper('.testimonial-gallery-thumbs', {
     spaceBetween: 5,
+   
     centeredSlides: true, // Center the active thumbnail
     slidesPerView: 3, // Show 3 thumbnails at a time
     slideToClickedSlide: true,
@@ -138,6 +148,7 @@ var blogSwiper = new Swiper(".blog-swiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  grabCursor: true,
   navigation: {
     nextEl: ".blog-button-next",
     prevEl: ".blog-button-prev",

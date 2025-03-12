@@ -1,11 +1,13 @@
 /* -------------------- Portfolio Section -------------------- */
 .portfolio-section {
   position: relative;
-  padding: 80px 0;
+  padding: 80px  0 ;
   overflow: visible;
+  min-height: 100vh; /* Adjust height as needed */
 
   @media (max-width: 576px) {
-    padding: 10px 0;
+    padding: 50px  0 50px 0;
+    min-height: 70vh
   }
   .portfolio-title {
     font-weight: 700;
@@ -37,20 +39,20 @@
     }
   }
 }
-/* Background effect (halfway) */
 .portfolio-section::after {
   content: "";
-  top: 500px;
   position: absolute;
- height: 400px;
+  bottom: 0; 
   left: 0;
   width: 100%;
+  height: 400px; 
   background: $primary-clr;
   z-index: -1;
-  @media(max-width: 780px){
-    display: none;
+  @media(max-width:576px){
+    height: 400px;
   }
 }
+
 
 .swiper-button-next,
 .swiper-button-prev {
