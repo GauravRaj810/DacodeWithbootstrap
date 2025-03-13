@@ -1,5 +1,5 @@
 .navbar {
-  background: $clr-light-cyan; /* Default for small screens (mobile-first) */
+  // background: $clr-light-cyan; /* Default for small screens (mobile-first) */
   position: fixed;
   top: 0;
   width: 100%;
@@ -7,11 +7,11 @@
   transition: all 0.3s ease;
 }
 
-@media (min-width: 992px) {
-  .navbar {
-    background: $clr-white; /* Change background for larger screens */
-  }
-}
+// @media (min-width: 992px) {
+//   .navbar {
+//     background: $clr-white; /* Change background for larger screens */
+//   }
+// }
 
 .navbar-collapse {
   flex-grow: 0;

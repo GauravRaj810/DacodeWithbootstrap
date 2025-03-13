@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.style.background = "#ffffff";
       navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
     } else {
-      navbar.style.background = window.innerWidth < 992 ? "#d9fff4" : "#ffffff";
+      navbar.style.background = window.innerWidth < 992 ? "#ffffff" : "#ffffff";
       navbar.style.boxShadow = "none";
     }
   });
@@ -155,6 +155,15 @@ var blogSwiper = new Swiper(".blog-swiper", {
   },
   breakpoints: {
     // When the screen width is <= 992px
+    1400: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    // When the screen width is <= 992px
+    1200: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
     992: {
       slidesPerView: 3,
       spaceBetween: 20,

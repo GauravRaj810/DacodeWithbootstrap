@@ -10,50 +10,57 @@ html {
 .hero-section {
   padding: 220px 0;
   position: relative;
-  background: url(/images/hero.png);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: right center;
 }
 @media (max-width: 1200px) {
   .hero-section {
     padding: 180px 0;
-    background-size: 60%;
   }
 }
 @media (max-width: 992px) {
   .hero-section {
     padding: 150px 0;
-    background-size: 55%;
-    background-position: center right;
   }
 }
 @media (max-width: 768px) {
   .hero-section {
-    padding: 80px 0 100px 0;
-    background-size: 55%; /* Adjust size of the background image */
-    background-position: 120px 300px; /* Ensure the image is aligned to the bottom */
+    padding: 50px 0;
   }
 }
 @media (max-width: 576px) {
   .hero-section {
-    padding: 60px 20px;
-    background-size: 60%;
-    background-position: 90px 250px; /* Ensure the image is aligned to the bottom */
+    padding: 40px 0;
   }
 }
-@media (max-width: 480px) {
-  .hero-section {
-    padding: 60px 20px;
-    background-size: 60%;
-    background-position: 80px 290px; /* Ensure the image is aligned to the bottom */
+.hero-section .hero-bg-img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Centers vertically */
+  width: 60vw; /* Covers more screen space */
+  max-width: 950px; /* Prevents it from being too large */
+  height: auto;
+  object-fit: cover;
+  z-index: -1; /* Sends it behind the text */
+}
+@media (max-width: 768px) {
+  .hero-section .hero-bg-img {
+    transform: translateY(0%);
+    transform: translateX(-5%);
+    position: relative; /* Removes absolute positioning */
+    right: auto;
+    top: auto;
+    max-height: 100%;
+    width: 100%; /* Full width on small screens */
+    max-width: 100%;
+    display: block;
+    margin-top: 20px; /* Adds spacing */
+    z-index: 1; /* Brings it to normal stacking */
   }
 }
-@media (max-width: 380px) {
-  .hero-section {
-    padding: 60px 20px;
-    background-size: 60%;
-    background-position: 60px 330px; /* Ensure the image is aligned to the bottom */
+@media (max-width: 576px) {
+  .hero-section .hero-bg-img {
+    transform: translateX(-5%);
+    margin-top: 10px; /* Adds spacing */
   }
 }
 
@@ -69,14 +76,14 @@ html {
   .hero-content {
     max-width: 100%;
     text-align: center;
-    padding: 0 20px 180px 20px;
+    padding: 0px;
   }
 }
 @media (max-width: 576px) {
   .hero-content {
     max-width: 100%;
     text-align: center;
-    padding: 0 30px 140px 30px;
+    padding: 0px;
   }
 }
 
@@ -198,14 +205,8 @@ html {
 }
 @media (max-width: 768px) {
   .btn-outline-primary {
-    padding: 4px 9px;
-    font-size: 15px !important;
-  }
-}
-@media (max-width: 576px) {
-  .btn-outline-primary {
-    padding: 3px 5px;
-    font-size: 14px !important;
+    padding: 7px 16px;
+    font-size: 13px !important;
   }
 }
 .btn-outline-primary:hover {
@@ -234,6 +235,7 @@ html {
 }
 
 .btn-danger {
+  border: none !important;
   padding: 14px 50px;
   margin: 0 auto;
   z-index: 999;
@@ -257,11 +259,11 @@ html {
 }
 
 .see-btn {
-  padding: 0 25px;
   position: absolute;
-  bottom: -25px; /* Adjust based on need */
+  bottom: -3%; /* Align with background */
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2; /* Ensure button is visible */
 }
 
 .btn-wrapper {
@@ -455,11 +457,6 @@ hr {
 }
 @media (max-width: 768px) {
   .underline {
-    margin-left: 50 px;
-  }
-}
-@media (max-width: 576px) {
-  .underline {
     margin: auto;
   }
 }
@@ -481,7 +478,6 @@ hr {
 }
 
 .navbar {
-  background: #d9fff4; /* Default for small screens (mobile-first) */
   position: fixed;
   top: 0;
   width: 100%;
@@ -489,11 +485,6 @@ hr {
   transition: all 0.3s ease;
 }
 
-@media (min-width: 992px) {
-  .navbar {
-    background: #FFFFFF; /* Change background for larger screens */
-  }
-}
 .navbar-collapse {
   flex-grow: 0;
   gap: 10px;
@@ -685,9 +676,7 @@ body {
 /* -------------------- Portfolio Section -------------------- */
 .portfolio-section {
   position: relative;
-  padding: 80px 0;
-  overflow: visible;
-  min-height: 100vh; /* Adjust height as needed */
+  padding: 80px 0 120px 0;
 }
 @media (max-width: 576px) {
   .portfolio-section {
@@ -729,19 +718,31 @@ body {
   }
 }
 
+.swiper-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
 .portfolio-section::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  top: 55%;
   left: 0;
   width: 100%;
-  height: 400px;
+  height: 45%;
   background: #60E1CB;
-  z-index: -1;
+  z-index: -2;
+}
+@media (max-width: 992px) {
+  .portfolio-section::after {
+    top: 60%;
+    height: 40%;
+  }
 }
 @media (max-width: 576px) {
   .portfolio-section::after {
-    height: 400px;
+    top: 70%;
+    height: 30%;
   }
 }
 
@@ -966,77 +967,71 @@ body {
 }
 
 .list-section {
-  background: url(/images/Working\ Remotely.png);
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: right 300px;
+  overflow: hidden;
   margin-top: 200px;
   padding-bottom: 200px;
-  padding-left: 120px;
-}
-@media (max-width: 1200px) {
-  .list-section {
-    margin-top: 180px;
-    padding-bottom: 180px;
-    padding-left: 110px;
-    background-size: 45%;
-    background-position: right 350px;
-  }
+  position: relative;
 }
 @media (max-width: 992px) {
   .list-section {
     margin-top: 150px;
-    padding-bottom: 200px;
-    padding-left: 0;
-    background-size: 50%;
-    background-position: right 790px;
+    padding-bottom: 100px;
   }
 }
 @media (max-width: 768px) {
   .list-section {
-    margin-top: 100px;
-    padding-bottom: 150px;
-    padding-left: 0;
-    background-size: 50%;
-    background-position: right 920px;
+    margin-top: 110px;
+    padding-bottom: 70px;
   }
 }
 @media (max-width: 576px) {
   .list-section {
-    padding-bottom: 180px;
     margin-top: 80px;
-    padding-left: 0;
-    background-size: 45%;
-    background-position: right 830px;
-  }
-}
-@media (max-width: 460px) {
-  .list-section {
-    margin-top: 70px;
-    padding-left: 0;
-    background-size: 40%;
-    background-position: right 950px;
-  }
-}
-@media (max-width: 430px) {
-  .list-section {
-    background-size: 50%;
-    background-position: center 1050px;
-  }
-}
-@media (max-width: 390px) {
-  .list-section {
-    background-size: 50%;
-    background-position: center 1250px;
-  }
-}
-@media (max-width: 380px) {
-  .list-section {
-    background-size: 50%;
-    background-position: center bottom;
+    padding-bottom: 40px;
   }
 }
 
+.list-bg-img {
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-26%);
+  width: 70vw;
+  max-width: 950px;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Reduce image size below 1200px */
+@media (max-width: 1200px) {
+  .list-bg-img {
+    overflow: hidden;
+    width: 47vw;
+    max-width: 600px;
+    right: 3%;
+  }
+  .list-bg-img img {
+    overflow: hidden;
+    height: 660px;
+  }
+}
+/* Move image below content below 992px */
+@media (max-width: 992px) {
+  .list-bg-img {
+    transform: translateX(10%);
+    overflow: hidden;
+    position: relative;
+    top: auto;
+    width: 100%; /* Full width */
+    max-width: 100%;
+  }
+  .list-bg-img img {
+    width: 100%; /* Keep it responsive */
+    height: auto;
+  }
+}
 .main-head-text {
   color: #60E1CB;
 }
@@ -1181,7 +1176,7 @@ body {
   flex-direction: column;
   text-align: center;
   background: #FFFFFF;
-  height: 100%;
+  max-height: 300px;
   max-width: 1000px;
   margin: 0 auto;
   padding: 30px;

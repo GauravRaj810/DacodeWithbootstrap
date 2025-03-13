@@ -1,4 +1,5 @@
 .container {
+
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -7,11 +8,9 @@
   width: 120px;
   background: $secondry-clr;
   @media(max-width:768px){
-     margin-left: 50  px;
-  }
-  @media(max-width:576px){
      margin: auto;
   }
+
 }
 
 .span-text {

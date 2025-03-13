@@ -1,4 +1,4 @@
-body{
+body {
   font-family: "DM Sans", sans-serif;
 }
 
@@ -9,44 +9,55 @@ html {
 .hero-section {
   padding: 220px 0;
   position: relative;
-  background: url(/images/hero.png);
-  background-size: 50%; // Default size for large screens
-  background-repeat: no-repeat;
-  background-position: right center; // Keep image aligned to the right
 
   @media (max-width: 1200px) {
     padding: 180px 0;
-    background-size: 60%; // Reduce background image size
   }
 
   @media (max-width: 992px) {
     padding: 150px 0;
-    background-size: 55%;
-    background-position: center right; // Adjust for medium screens
   }
 
   @media (max-width: 768px) {
-    padding: 80px 0 100px 0;
-    background-size: 55%; /* Adjust size of the background image */
-    background-position: 120px 300px; /* Ensure the image is aligned to the bottom */
+    padding: 50px 0
   }
 
   @media (max-width: 576px) {
-    padding: 60px 20px;
-    background-size: 60%;
-    background-position: 90px 250px; /* Ensure the image is aligned to the bottom */
+    padding: 40px 0;
   }
-  @media (max-width: 480px) {
-    padding: 60px 20px;
-    background-size: 60%;
-    background-position: 80px 290px; /* Ensure the image is aligned to the bottom */
-  }
-  @media (max-width: 380px) {
-    padding: 60px 20px;
-    background-size: 60%;
-    background-position: 60px 330px; /* Ensure the image is aligned to the bottom */
+
+  .hero-bg-img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centers vertically */
+    width: 60vw; /* Covers more screen space */
+    max-width: 950px; /* Prevents it from being too large */
+    height: auto;
+    object-fit: cover;
+    z-index: -1; /* Sends it behind the text */
+
+    @media (max-width: 768px) {
+      transform: translateY(0%);
+      transform: translateX(-5%) ;
+      position: relative; /* Removes absolute positioning */
+      right: auto;
+      top: auto;
+      max-height: 100%;
+      width: 100%; /* Full width on small screens */
+      max-width: 100%; 
+      display: block;
+      margin-top: 20px; /* Adds spacing */
+      z-index: 1; /* Brings it to normal stacking */
+    }
+    @media (max-width: 576px) {
+      transform: translateX(-5%) ;
+      margin-top: 10px; /* Adds spacing */
+
+    }
   }
 }
+
 
 .hero-content {
   max-width: 650px;
@@ -57,12 +68,12 @@ html {
   @media (max-width: 768px) {
     max-width: 100%;
     text-align: center; // Center content for small screens
-    padding: 0 20px 180px 20px;
+    padding: 0px;
   }
   @media (max-width: 576px) {
     max-width: 100%;
     text-align: center; // Center content for small screens
-    padding: 0 30px 140px 30px;
+    padding: 0px;
   }
 }
 .hero-section-title {

@@ -1,9 +1,9 @@
 /* -------------------- Portfolio Section -------------------- */
 .portfolio-section {
   position: relative;
-  padding: 80px  0 ;
-  overflow: visible;
-  min-height: 100vh; /* Adjust height as needed */
+  padding: 80px   0 120px 0 ;
+
+
 
   @media (max-width: 576px) {
     padding: 50px  0 50px 0;
@@ -39,17 +39,42 @@
     }
   }
 }
+// .portfolio-section::after {
+//   content: "";
+//   position: absolute;
+//   bottom: 0; 
+//   left: 0;
+//   width: 100%;
+//   height: 400px; 
+//   background: $primary-clr;
+//   z-index: -1;
+//   @media(max-width:576px){
+//     height: 400px;
+//   }
+// }
+.swiper-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
 .portfolio-section::after {
   content: "";
   position: absolute;
-  bottom: 0; 
+  top: 55%; 
   left: 0;
   width: 100%;
-  height: 400px; 
+  height: 45%; 
   background: $primary-clr;
-  z-index: -1;
-  @media(max-width:576px){
-    height: 400px;
+  z-index: -2; 
+  
+  @media (max-width: 992px) {
+    top: 60%; 
+    height: 40%;
+  }
+ 
+  @media (max-width: 576px) {
+    top: 70%;
+    height: 30%;
   }
 }
 
