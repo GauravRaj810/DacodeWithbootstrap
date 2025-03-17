@@ -143,6 +143,18 @@ html {
   }
 }
 
+.signin-btn {
+  background: transparent;
+  color: #60E1CB;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.signin-btn:hover {
+  color: #000000;
+}
+
 .btn {
   border-radius: 9999px;
   color: #FFFFFF;

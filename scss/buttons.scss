@@ -1,4 +1,15 @@
 // Global Button Styles
+.signin-btn{
+  background: transparent;
+  color: $primary-clr;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+
+}
+.signin-btn:hover{
+  color: $clr-black;
+}
 .btn {
   border-radius: 9999px;
   color: $clr-white;

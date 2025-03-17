@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Dacode</title>
   <link rel="icon" type="image/png" href="/images/logo 1.png">
   <!-- Swiper CSS -->
@@ -23,11 +23,11 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-
   <script src="/js/app.js" defer></script>
   <!-- Font Awesome CDN for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
   <header id="home">
     <nav class="navbar navbar-expand-lg navbar-light py-4" id="mainNav">
@@ -39,20 +39,61 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse offset-2" id="navbarNav">
-          <ul class="navbar-nav ms-auto ">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="#Portfolio">Portfolio</a></li>
             <li class="nav-item"><a class="nav-link" href="#Testimonial">Testimonial</a></li>
             <li class="nav-item"><a class="nav-link" href="#footer">Contact Us</a></li>
+            <button class="signin-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+              <i class="fa-regular fa-user "></i>
+              Sign in
+            </button>
           </ul>
         </div>
-        <div class="request-btn">
-          <button class="btn btn-primary fs- " type="button">Request a quote</button>
-        </div>
+        <!-- Modal Trigger Button (replacing the original request-btn) -->
       </div>
     </nav>
   </header>
+  <!-- Modal Markup -->
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Show a second modal and hide this one with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+            Open second modal
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Hide this modal and show the first with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+            Back to first
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- end of header -->
   <!-- Hero Section -->
   <section class="hero-section">
@@ -177,7 +218,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="card service-card h-100    ">
+            <div class="card service-card h-100">
               <div class="service-icon-wrapper">
                 <div class="service-icon-circle"></div>
                 <div class="service-icon">
@@ -199,7 +240,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="card service-card h-100    ">
+            <div class="card service-card h-100">
               <div class="service-icon-wrapper">
                 <div class="service-icon-circle"></div>
                 <div class="service-icon">
@@ -223,11 +264,11 @@
           </div>
         </div>
       </div>
-    </div >
-  </section >
+    </div>
+  </section>
   <!--End of  Service section  -->
   <!-- portfolio sectioin  -->
-  <section class="portfolio-section" id="Portfolio" >
+  <section class="portfolio-section" id="Portfolio">
     <div class="container">
       <div class="row">
         <p class="portfolio-subtitle mb-3">Portfolio</p>
@@ -533,14 +574,14 @@
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
     <div class="list-bg-img">
       <img src="/images/Working Remotely.png" alt="remote-img">
     </div>
   </section>
   <!-- end of list section  -->
-   <!-- contact section  -->
+  <!-- contact section  -->
   <section class="contact-section">
     <div class="container">
       <div class="row mx-auto">
@@ -578,9 +619,9 @@
                 </div>
                 <p class="testimonial-desc">We tried several agencies before we found daCode. It has been a pleasure to
                   work with them, and we are excited to start our next project with our second brand.</p>
-                  <i class="fa-solid fa-repeat"></i>
+                <i class="fa-solid fa-repeat"></i>
               </div>
-             
+
             </div>
             <!-- Testimonial Slide 2 -->
             <div class="swiper-slide">
@@ -595,9 +636,9 @@
                 </div>
                 <p class="testimonial-desc">The team at daCode exceeded our expectations. Their attention to detail and
                   dedication to delivering quality work is remarkable. We highly recommend their services.</p>
-                  <i class="fa-solid fa-repeat"></i>
+                <i class="fa-solid fa-repeat"></i>
               </div>
-            
+
             </div>
             <!-- Testimonial Slide 3 -->
             <div class="swiper-slide">
@@ -612,7 +653,7 @@
                 </div>
                 <p class="testimonial-desc">The team at daCode exceeded our expectations. Their attention to detail and
                   dedication to delivering quality work is remarkable. We highly recommend their services.</p>
-                  <i class="fa-solid fa-repeat"></i>
+                <i class="fa-solid fa-repeat"></i>
               </div>
 
             </div>
@@ -628,7 +669,7 @@
                 </div>
                 <p class="testimonial-desc">The team at daCode exceeded our expectations. Their attention to detail and
                   dedication to delivering quality work is remarkable. We highly recommend their services.</p>
-                  <i class="fa-solid fa-repeat"></i>
+                <i class="fa-solid fa-repeat"></i>
               </div>
             </div>
             <div class="swiper-slide">
@@ -645,7 +686,7 @@
                   attention to detail and dedication to delivering quality work is remarkable. We highly recommend their
                   services.</p>
 
-                  <i class="fa-solid fa-repeat"></i>
+                <i class="fa-solid fa-repeat"></i>
               </div>
             </div>
           </div>
@@ -668,7 +709,6 @@
                 <p>Owner XYZ</p>
               </div>
             </div>
-
             <!-- Testimonial Thumb 2 -->
             <div class="swiper-slide">
               <div class="testimonial-thumb-container">
@@ -679,7 +719,6 @@
                 <p>Owner X </p>
               </div>
             </div>
-
             <!-- Testimonial Thumb 3 -->
             <div class="swiper-slide">
               <div class="testimonial-thumb-container">
@@ -690,7 +729,6 @@
                 <p>Owner y</p>
               </div>
             </div>
-
             <!-- Testimonial Thumb 4 -->
             <div class="swiper-slide">
               <div class="testimonial-thumb-container">
@@ -701,7 +739,6 @@
                 <p>Owner g</p>
               </div>
             </div>
-
             <!-- Testimonial Thumb 5 -->
             <div class="swiper-slide">
               <div class="testimonial-thumb-container">
@@ -772,86 +809,80 @@
         <button class="blog-button-next">❯</button>
         <div class="swiper-pagination"></div>
       </div>
-
     </div>
   </section>
   <!-- End of blog section  -->
   <!-- footer section  -->
   <section class="footer-section">
-      <div class="footer-container">
-        <div class="footer-logo-container">
-          <div class="img-logo-wrapper mb-4">
-            <a href="#home"><img src="/images/logo 1.png" alt="DaCode Logo"></a>
-          </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+    <div class="footer-container">
+      <div class="footer-logo-container">
+        <div class="img-logo-wrapper mb-4">
+          <a href="#home"><img src="/images/logo 1.png" alt="DaCode Logo"></a>
         </div>
-        <div class="footer-content">
-          <div class="footer-content-desc" id="footer">
-            <h3 class="">Work</h3>
-            <ul type="none">
-              <li>Blog</li>
-              <li>How We Work</li>
-              <li>Testimonials</li>
-            </ul>
-          </div>
-          <div class="footer-content-desc">
-            <h3 class="">Services</h3>
-            <ul type="none">
-              <li>Marketing Strategy</li>
-              <li>Website Optimization</li>
-              <li>Email Maerketing</li>
-            </ul>
-          </div>
-          <div class="footer-content-desc">
-            <h3 class="">Business Solution</h3>
-            <ul type="none">
-              <li>Partnership</li>
-              <li>About Project</li>
-              <li>Corporate</li>
-            </ul>
-          </div>
-          <div class="footer-content-desc ">
-              <h3 class="">Contact Us</h3>
-           
-              <ul type="none" class="footer-links">
-                <li class="flex-icon">
-                    <a href="tel:+254722359463" class="link-features">
-                        <p> <strong>Phone:</strong> +1 (123) 456-7890</p>
-                    </a>
-                </li>
-                <li class="flex-icon">
-                    <a href="mailto:contact@company.com">
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+      </div>
+      <div class="footer-content">
+        <div class="footer-content-desc" id="footer">
+          <h3 class="">Work</h3>
+          <ul type="none">
+            <li>Blog</li>
+            <li>How We Work</li>
+            <li>Testimonials</li>
+          </ul>
+        </div>
+        <div class="footer-content-desc">
+          <h3 class="">Services</h3>
+          <ul type="none">
+            <li>Marketing Strategy</li>
+            <li>Website Optimization</li>
+            <li>Email Maerketing</li>
+          </ul>
+        </div>
+        <div class="footer-content-desc">
+          <h3 class="">Business Solution</h3>
+          <ul type="none">
+            <li>Partnership</li>
+            <li>About Project</li>
+            <li>Corporate</li>
+          </ul>
+        </div>
+        <div class="footer-content-desc ">
+          <h3 class="">Contact Us</h3>
 
-                        <p> <strong>Email:</strong> contact@company.com</p>
-                    </a>
-                </li>
-                <li class="flex-icon">
-                    <a href="https://www.google.com/maps/place/EnactOn+Technologies+Private+Limited/@21.1473121,72.7573351,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04d8d96d2b733:0x1a5232e28e4094e4!8m2!3d21.1473071!4d72.75991!16s%2Fg%2F11h5w30znh?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
-                        class="link-features">
-
-                        <p><strong>Address:</strong> Tech
-                            City, TX 75001</p>
-                    </a>
-                </li>
-            </ul>
-          </div>
+          <ul type="none" class="footer-links">
+            <li class="flex-icon">
+              <a href="tel:+254722359463" class="link-features">
+                <p> <strong>Phone:</strong> +1 (123) 456-7890</p>
+              </a>
+            </li>
+            <li class="flex-icon">
+              <a href="mailto:contact@company.com">
+                <p> <strong>Email:</strong> contact@company.com</p>
+              </a>
+            </li>
+            <li class="flex-icon">
+              <a href="https://www.google.com/maps/place/EnactOn+Technologies+Private+Limited/@21.1473121,72.7573351,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04d8d96d2b733:0x1a5232e28e4094e4!8m2!3d21.1473071!4d72.75991!16s%2Fg%2F11h5w30znh?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
+                class="link-features">
+                <p><strong>Address:</strong> Tech
+                  City, TX 75001</p>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <hr>
-      <div class="footer-copyright-wrapper">
-        <div class="footer-copy">
-          <p>© DaCode. 2025</p>
-        </div>
-        <div class="footer-desc">
-          <div class="item">FW</div>
-          <div class="item">TW</div>
-          <div class="item">IG</div>
-        </div>
+    </div>
+    <hr>
+    <div class="footer-copyright-wrapper">
+      <div class="footer-copy">
+        <p>© DaCode. 2025</p>
       </div>
+      <div class="footer-desc">
+        <div class="item">FW</div>
+        <div class="item">TW</div>
+        <div class="item">IG</div>
+      </div>
+    </div>
   </section>
-
-
-
   <a class="scroll-link top-link" href="#home">
     <i class="fas fa-arrow-up"></i>
   </a>
