@@ -241,7 +241,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// dropdown --- 
+// search bar -********** 
+
+ // Get elements
+ const searchIcon = document.getElementById('searchIcon');
+ const searchBar = document.getElementById('searchBar');
+ const closeSearchBtn = document.getElementById('closeSearchBtn');
+
+ // Show the search bar when the search icon is clicked
+ searchIcon.addEventListener('click', () => {
+   searchBar.classList.add('active'); // Slide the search bar down
+ });
+
+ // Close the search bar when the close button is clicked
+ closeSearchBtn.addEventListener('click', () => {
+   searchBar.classList.remove('active'); // Slide the search bar up
+ });
+
+
 
 
 

@@ -1,5 +1,5 @@
 .navbar {
-  // background: $clr-light-cyan; /* Default for small screens (mobile-first) */
+
   position: fixed;
   top: 0;
   width: 100%;
@@ -7,11 +7,18 @@
   transition: all 0.3s ease;
 }
 
-// @media (min-width: 992px) {
-//   .navbar {
-//     background: $clr-white; /* Change background for larger screens */
-//   }
-// }
+
+.img-logo-wrapper img{
+  @media(max-width: 576px){
+   max-width: 160px;
+    max-height: 200px;
+  }
+}
+/* Remove the font-size completely (it will not be inherited) */
+.navbar-toggler {
+  font-size: unset; /* Resets to the default value, meaning no specific font size */
+}
+
 
 .navbar-collapse {
   flex-grow: 0;
@@ -23,7 +30,7 @@
 
 .navbar-nav {
   gap: 40px;
-  
+
   @media (max-width: 1400px) {
     gap: 28px;
   }
@@ -38,10 +45,10 @@
 .nav-link {
   color: $primary-clr;
   font-size: 18px;
-  font-weight: bold; /* Set it bold from the beginning to prevent shift */
-  opacity: 0.8; /* Reduce opacity so it looks "lighter" */
+  font-weight: bold; 
+  opacity: 0.8; 
   transition: all 0.3s ease-in-out;
-  
+
   @media (min-width: 992px) {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -51,7 +58,7 @@
   }
   &:hover {
     color: $clr-black;
-    opacity: 1; /* Full opacity on hover instead of changing font-weight */
+    opacity: 1; 
     @media (max-width: 992px) {
       color: $clr-light-blue;
     }

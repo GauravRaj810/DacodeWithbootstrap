@@ -1,0 +1,50 @@
+/* Initially hide the search bar */
+.search-btn{
+    background: transparent;
+    border: none;
+    display: none;
+    @media(max-width:576px){
+        display: block;
+    }
+}
+.search-bar {
+    position: fixed;
+    top: -100px; /* Hidden off-screen initially */
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 9999;
+    transition: top 0.3s ease-in-out; /* Smooth sliding effect */
+  
+  }
+  
+  /* When the search bar is active */
+  .search-bar.active {
+    top: 0; /* Bring it to the top */
+  }
+  
+  /* Styling for the search input */
+  .search-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search-content input[type="text"] {
+    width: 100%;
+    padding: 9px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .search-content .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
+  }
+  

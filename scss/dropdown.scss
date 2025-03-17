@@ -19,15 +19,14 @@
       display: none; /* Hides the "Portfolio" dropdown below 992px */
     }
   }
-  
-  
+
   /* Style for the mega menu */
   .dropdown-menu {
     position: absolute;
     top: 70%; /* Pull it upwards to make it closer to the navbar */
     left: 50%; /* Center the dropdown horizontally */
     transform: translateX(-50%); /* Adjust to center it exactly */
-    width: 1200px; /* Set the width to 1200px */
+     min-width: 1180px;
     display: none; /* Initially hidden */
     opacity: 0; /* Initially invisible */
     visibility: hidden; /* Initially invisible */
@@ -35,7 +34,7 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
-  
+
     /* Ensure the dropdown stays visible when hovered */
     .navbar &,
     &:hover {
@@ -53,7 +52,13 @@
     margin-bottom: 15px;
     color: #333;
   }
-  
+  .dropdown i{
+    transition: $transition-all;
+  }
+  .dropdown i:hover{
+    transform: rotate(180deg);
+
+  }
   /* Style for dropdown items */
   .dropdown-menu .dropdown-item {
     padding: 8px 15px;

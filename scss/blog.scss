@@ -3,7 +3,6 @@
 }
 .blog-section-wrapper {
   display: flex;
-
   padding: 150px 0 150px 150px;
   @media (max-width: 1200px) {
     text-align: left;
@@ -24,7 +23,6 @@
       font-size: 30px;
     }
   }
-
   h3 {
     color: $secondry-clr;
     font-weight: 700;
@@ -54,11 +52,9 @@
   margin: 20px auto;
   position: relative;
 }
-
 .swiper-horizontal {
   min-height: 350px;
 }
-
 .blog-swiper .swiper-slide {
   padding: 83px 35px 55px 34px;
   background: $clr-white;
@@ -86,7 +82,6 @@
     text-align: justify;
   }
 }
-
 /* Unique Button Styles */
 .blog-button-next,
 .blog-button-prev {
@@ -108,21 +103,17 @@
     display: none;
   }
 }
-
 .blog-button-next {
   right: 10px;
 }
-
 .blog-button-prev {
   left: 10px;
   display: none; /* Initially hidden */
 }
-
 .blog-button-next:hover,
 .blog-button-prev:hover {
   background: #4d97bd; /* Darker orange on hover */
 }
-
 /* Pagination Style */
 .blog-pagination {
   position: absolute;
