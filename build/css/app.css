@@ -1739,10 +1739,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.dropdown i:hover {
-  transform: rotate(180deg);
-}
-
 /* Style for dropdown items */
 .dropdown-menu .dropdown-item {
   padding: 8px 15px;
@@ -1759,6 +1755,10 @@ body {
 /* Ensure dropdown covers the entire width of the container */
 .position-static {
   position: static !important;
+}
+
+.dropdown-toggle:hover i {
+  transform: rotate(180deg);
 }
 
 /* Adjust dropdown icon (remove the default Bootstrap dropdown arrow) */
