@@ -1,0 +1,108 @@
+/* SCSS version of the dropdown styles */
+
+/* Dropdown trigger hover functionality */
+.navbar {
+    .dropdown {
+      &:hover {
+        .dropdown-menu {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+          z-index: 9999; /* Ensure the dropdown is on top */
+        }
+      }
+    }
+  }
+  /* Remove the "Portfolio" dropdown entirely below 992px */
+@media (max-width: 992px) {
+    .navbar .dropdown {
+      display: none; /* Hides the "Portfolio" dropdown below 992px */
+    }
+  }
+  
+  
+  /* Style for the mega menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 70%; /* Pull it upwards to make it closer to the navbar */
+    left: 50%; /* Center the dropdown horizontally */
+    transform: translateX(-50%); /* Adjust to center it exactly */
+    width: 1200px; /* Set the width to 1200px */
+    display: none; /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially invisible */
+    border-radius: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
+  
+    /* Ensure the dropdown stays visible when hovered */
+    .navbar &,
+    &:hover {
+      opacity: 1; /* Make it fully visible */
+      visibility: visible; /* Make it visible */
+      transform: translateX(-50%); /* Keep it centered */
+      left: 50%; /* Ensure it stays centered even when hovered */
+    }
+  }
+  
+  /* Style for headings in the mega menu */
+  .dropdown-menu h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Style for dropdown items */
+  .dropdown-menu .dropdown-item {
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: transparent;
+      color: $clr-black; /* Highlight color on hover */
+      transform: translateX(5px); /* Add slight movement for hover effect */
+    }
+  }
+  
+  /* Ensure dropdown covers the entire width of the container */
+  .position-static {
+    position: static !important;
+  }
+  
+  /* Adjust dropdown icon (remove the default Bootstrap dropdown arrow) */
+  .dropdown-toggle::after {
+    display: none;
+  }
+  
+  /* Mobile responsive adjustments */
+  @media (max-width: 992px) {
+    .dropdown-menu {
+      width: 100% !important; /* Full width on mobile */
+      left: 0; /* Align left on smaller screens */
+      transform: none; /* No centering transformation on mobile */
+    }
+  
+    .dropdown-menu .row {
+      margin: 0;
+    }
+  
+    .dropdown-menu .col-md-3 {
+      padding: 10px 15px;
+    }
+  }
+  
+  /* Adjust layout for smaller screen sizes */
+  @media (max-width: 768px) {
+    .dropdown-menu .row {
+      flex-direction: column; /* Stack columns on smaller screens */
+    }
+  
+    .dropdown-menu .col-md-3 {
+      width: 100%; /* Full width for each column on mobile */
+    }
+  }
+  

@@ -1,0 +1,121 @@
+.modal{
+    top: -15%;
+}
+.modal-header {
+    position: relative;
+  .modal-title {
+    margin-bottom: 10px;
+    border-radius: 9999px;
+    background: $secondry-clr;
+    padding: 6px 15px;
+    color: $clr-white;
+    font-size: 10px;
+    transition: $transition-all;
+  }
+  .modal-title:hover {
+    background: $clr-light-blue;
+    cursor: pointer;
+  }
+  .social-icon-btn {
+    border-radius: 5px;
+    border: none;
+    background: $primary-clr;
+    padding: 8px 10px;
+    transition: $transition-all;
+
+    i {
+      padding-right: 10px;
+    }
+  }
+  .social-icon-btn:hover {
+    background: $clr-secondry-dark;
+  }
+}
+
+
+.modal-footer{
+    flex-wrap: nowrap;
+    .input-container {
+        position: relative;
+        width: 390px;  /* Set the width of the input container */
+      }
+      
+      .input-container input {
+        width: 100%;
+        padding: 10px 30px 10px 10px;  /* Padding to make space for the icon */
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      .input-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #999;
+        pointer-events: none; /* Ensure the icon is not interactive */
+      }
+      .option-select-wrapper{
+        padding: 20px 0; 
+        width: 100%;;
+        display: flex;
+        justify-content: space-around;
+    }
+    .forgot-btn{
+
+        border: none;
+        background: transparent;
+    }
+
+    .sign-in-lg{
+  
+        border: none;
+        background: $primary-clr;
+        color: #FFFFFF;
+        border-radius: 9999px;
+        padding: 5px 172px;
+        transition: $transition-all;
+    }
+    .sign-in-lg:hover{
+        color: $clr-white;
+        background: $secondry-clr;
+    }
+      
+}
+
+// modal -2 & forgot password 
+.forgot-password-header{
+    margin: 0 auto;
+    border-radius: 9999px;
+    font-size: 20px;
+    border: none;
+    padding: 8px 14px;
+    background: #60E1CB;
+    color: #FFFFFf;
+    transition: $transition-all;
+}
+.forgot-password-header:hover{
+    background: $secondry-clr;
+}
+
+.back-signin-btn{
+    border-radius: 9999px;
+    border: none;
+    background: none;
+    padding: 8px 16px;
+    background: $secondry-clr;
+    color: $clr-white;
+    transition: $transition-all;
+}
+.back-signin-btn:hover{
+    background: $primary-clr;
+
+}
+.btn-close{
+   right: 5% ;
+   position: absolute;
+}
+
+

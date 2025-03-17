@@ -42,16 +42,73 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#Portfolio">Portfolio</a></li>
+
+            <!-- Portfolio dropdown with mega menu -->
+            <!-- Portfolio dropdown with mega menu -->
+            <li class="nav-item dropdown position-static">
+              <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button">
+                Portfolio <i class="fa-solid fa-angle-down ms-1"></i>
+              </a>
+              <div class="dropdown-menu border-0 shadow" aria-labelledby="portfolioDropdown">
+                <div class="container py-4">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h5>Project Categories</h5>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Web Design</a></li>
+                        <li><a class="dropdown-item" href="#">Mobile Apps</a></li>
+                        <li><a class="dropdown-item" href="#">E-commerce</a></li>
+                        <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h5>Industries</h5>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Healthcare</a></li>
+                        <li><a class="dropdown-item" href="#">Education</a></li>
+                        <li><a class="dropdown-item" href="#">Finance</a></li>
+                        <li><a class="dropdown-item" href="#">Technology</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h5>Recent Projects</h5>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Project Alpha</a></li>
+                        <li><a class="dropdown-item" href="#">Project Beta</a></li>
+                        <li><a class="dropdown-item" href="#">Project Gamma</a></li>
+                        <li><a class="dropdown-item" href="#">Project Delta</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h5>Portfolio Info</h5>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Case Studies</a></li>
+                        <li><a class="dropdown-item" href="#">Testimonials</a></li>
+                        <li><a class="dropdown-item" href="#">Awards</a></li>
+                        <li><a class="dropdown-item" href="#">View All</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+
+
+
+
+
+
+
+            <!-- end of portfolio dropdown  -->
             <li class="nav-item"><a class="nav-link" href="#Testimonial">Testimonial</a></li>
             <li class="nav-item"><a class="nav-link" href="#footer">Contact Us</a></li>
             <button class="signin-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-              <i class="fa-regular fa-user "></i>
+              <i class="fa-regular fa-user"></i>
               Sign in
             </button>
           </ul>
         </div>
-        <!-- Modal Trigger Button (replacing the original request-btn) -->
       </div>
     </nav>
   </header>
@@ -60,17 +117,43 @@
     tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+        <div class="modal-header d-flex flex-column">
+          <h1 class="modal-title fs-5 " id="exampleModalToggleLabel">Sign in</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="social-icon-btn-wrapper d-flex flex-column gap-2 ">
+            <button class="social-icon-btn"><i class="fa-brands fa-facebook fa-xl" style="color: #0b5dea;"></i>Sign in
+              with facebook</button>
+            <button class="social-icon-btn"><i class="fa-brands fa-google fa-xl" style="color: #4285F4;"></i>Sign in
+              with Google </button>
+            <button class="social-icon-btn"><i class="fa-brands fa-apple fa-xl"></i>Sign in with Apple</button>
+          </div>
         </div>
-        <div class="modal-body">
-          Show a second modal and hide this one with the button below.
+        <div class="modal-body text-center">
+          We'll never post anything without your permission
         </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
-            Open second modal
-          </button>
+        <div class="modal-footer d-flex flex-column">
+          <div class="input-container">
+            <input type="email" name="email" id="email" placeholder="Email">
+            <i class="fa-regular fa-envelope input-icon"></i>
+          </div>
+          <div class="input-container">
+            <input type="password" name="password" id="password" placeholder="Enter password">
+            <i class="fa-solid fa-key input-icon"></i>
+          </div>
+          <div class="option-select-wrapper ">
+            <div class="checkbox">
+              <input type="checkbox" name="rememberMe" id="rememberMe">
+              <label for="rememberMe">Remember Me</label>
+            </div>
+            <div class="forgot-password">
+              <button class="forgot-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                forgot password ?
+              </button>
+            </div>
+          </div>
+          <div class="sign-in-lg-wrapper">
+            <button class="sign-in-lg">Sign in</button>
+          </div>
         </div>
       </div>
     </div>
@@ -80,15 +163,22 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+          <div class="forgot-password-header">
+            Forgot password!
+          </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Hide this modal and show the first with the button below.
+          <p class="text-center"> Enter your email address and we will send you the instructions to reset your password
+          </p>
         </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-            Back to first
+        <div class="modal-footer ">
+          <div class="input-container ">
+            <input type="email" name="email" id="email" placeholder="Email">
+            <i class="fa-regular fa-envelope input-icon"></i>
+          </div>
+          <button class="back-signin-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+            Back
           </button>
         </div>
       </div>
@@ -123,7 +213,8 @@
   <!-- Service section  -->
   <section class="services-section" id="services">
     <div class="container">
-      <h2 class="section-title">Our Services</h2>
+      <h2 class="section-title" data-bs-toggle="tooltip" data-bs-placement="top" title="Our Services Information">Our
+        Services</h2>
       <p class="section-subtitle">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.
       </p>
