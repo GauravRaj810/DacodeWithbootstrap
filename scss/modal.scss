@@ -1,5 +1,11 @@
 .modal{
     top: -15%;
+    @media(max-width:1200px){
+      top: -20%;
+    }
+    @media(max-width:576px){
+      top: -10%;
+    }
 }
 .modal-header {
     position: relative;

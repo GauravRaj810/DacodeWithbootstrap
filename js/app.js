@@ -239,8 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 })
 
-
-
 // search bar -********** 
 
  // Get elements

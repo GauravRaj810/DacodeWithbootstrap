@@ -36,7 +36,7 @@
 
 .testimonial-gallery-top {
   height: auto !important; 
-  min-height: 150px; /* Adjust as needed */
+  min-height: 150px; 
   margin-bottom: 0; // Explicitly remove bottom margin
 }
 
@@ -58,7 +58,7 @@
   max-height:300px;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 30px 150px;
   justify-content: center;
   align-items: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
